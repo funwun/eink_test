@@ -1,0 +1,1961 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/home/david/KiCAD/einkdisplay/einkdisplay.sch</source>
+    <date>Sat 28 Nov 2015 07:53:27 PM PST</date>
+    <tool>Eeschema 4.0.0-rc1-stable</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>E-ink schematic</title>
+        <company/>
+        <rev>1</rev>
+        <date>10 November 2015</date>
+        <source>einkdisplay.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="RV1">
+      <value>10k</value>
+      <footprint>SMD_Packages:POT_SMD</footprint>
+      <fields>
+        <field name="MFG_PN">3314G-1-103E</field>
+        <field name="MFG">Bourns</field>
+      </fields>
+      <libsource lib="device" part="POT"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>514EFD03</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>68k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">VCOM voltage divider</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>514EFEC9</tstamp>
+    </comp>
+    <comp ref="C11">
+      <value>100nF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Purpose">STM32L151 supply bypass</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>514F4521</tstamp>
+    </comp>
+    <comp ref="TP1">
+      <value>VCOM</value>
+      <footprint>Connect:PINTST</footprint>
+      <libsource lib="einkdisplay-cache" part="CONN_1"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>516AF60A</tstamp>
+    </comp>
+    <comp ref="U5">
+      <value>LT3463</value>
+      <footprint>eink:10DFN-3x3</footprint>
+      <fields>
+        <field name="Purpose">SMPS controller to generate E Ink voltages</field>
+        <field name="MFG_PN">LT3463EDD#PBF</field>
+        <field name="MFG">Linear Technology</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="LT3463"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>514EB801</tstamp>
+    </comp>
+    <comp ref="R11">
+      <value>200k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Positive side SMPS feedback</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>514EB9CC</tstamp>
+    </comp>
+    <comp ref="R12">
+      <value>12k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Positive side SMPS feedback</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>514EB9D9</tstamp>
+    </comp>
+    <comp ref="L2">
+      <value>10µH</value>
+      <footprint>Inductors:NR4018_HandSoldering</footprint>
+      <fields>
+        <field name="MFG_PN">LQH44PN100MP0L</field>
+        <field name="MFG">Murata</field>
+      </fields>
+      <libsource lib="device" part="INDUCTOR"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>514EBA0C</tstamp>
+    </comp>
+    <comp ref="C9">
+      <value>1µF</value>
+      <footprint>Capacitors_SMD:C_0805</footprint>
+      <fields>
+        <field name="Purpose">Negative side SMPS capacitor</field>
+        <field name="MFG_PN">GRM219R61H105KA73D</field>
+        <field name="MFG">Murata</field>
+        <field name="Rating">50V</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>514EBA35</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>DIODESCH</value>
+      <footprint>Diodes_SMD:SOD-323</footprint>
+      <fields>
+        <field name="Purpose">Negative side SMPS diode</field>
+        <field name="MFG_PN">1N4148WX-TP</field>
+        <field name="MFG">Micro Commercial Components</field>
+      </fields>
+      <libsource lib="std_components" part="DIODESCH"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>514EBB46</tstamp>
+    </comp>
+    <comp ref="R10">
+      <value>160k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Negative side SMPS feedback</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>514EBB86</tstamp>
+    </comp>
+    <comp ref="R9">
+      <value>10k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Negative side SMPS feedback</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>514EBB8C</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>10k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Pull-down for SHDN_POS</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>514EBC96</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>10k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Pull-down for SHDN_NEG</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>514EBC9C</tstamp>
+    </comp>
+    <comp ref="TP3">
+      <value>+22V</value>
+      <footprint>Connect:PINTST</footprint>
+      <libsource lib="einkdisplay-cache" part="CONN_1"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>515ADB0E</tstamp>
+    </comp>
+    <comp ref="TP4">
+      <value>-20V</value>
+      <footprint>Connect:PINTST</footprint>
+      <libsource lib="einkdisplay-cache" part="CONN_1"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>515ADB68</tstamp>
+    </comp>
+    <comp ref="Q1">
+      <value>3A</value>
+      <footprint>eink:SOT-23_IRLML6402</footprint>
+      <fields>
+        <field name="MFG">Infineon</field>
+        <field name="MFG_PN">IRLML6402</field>
+      </fields>
+      <libsource lib="std_components" part="MOSFET_P"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>519E97DE</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>10k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Pull-down for SHDN_POS</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>519E9DAF</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>FPC39</value>
+      <footprint>FPC39:FPC39</footprint>
+      <fields>
+        <field name="MFG">Hirose</field>
+        <field name="MFG_PN">FH26-39S-0.3SHW(05)</field>
+      </fields>
+      <libsource lib="std_components" part="FPC39-P0P3"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5642D580</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>IS61LV256AL</value>
+      <footprint>eink:28TSOP-I</footprint>
+      <fields>
+        <field name="MFG">ISSI</field>
+        <field name="MFG_PN">IS61LV256AL-10TLI</field>
+      </fields>
+      <libsource lib="IS61LV256AL" part="IS61LV256AL"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>564D434D</tstamp>
+    </comp>
+    <comp ref="CON1">
+      <value>microSD</value>
+      <footprint>eink:microSD_std_top</footprint>
+      <fields>
+        <field name="MFG">Hirose</field>
+        <field name="MFG_PN">DM3AT-SF-PEJM5</field>
+      </fields>
+      <libsource lib="conn" part="SD_Card"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>564DF070</tstamp>
+    </comp>
+    <comp ref="U6">
+      <value>pic32mx330f064h</value>
+      <footprint>Housings_QFP:LQFP-64_10x10mm_Pitch0.5mm</footprint>
+      <datasheet>DOCUMENTATION</datasheet>
+      <libsource lib="pics" part="pic32mx330f064h"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5650D220</tstamp>
+    </comp>
+    <comp ref="C20">
+      <value>100nF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Purpose">STM32L151 supply bypass</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56514B34</tstamp>
+    </comp>
+    <comp ref="C19">
+      <value>100nF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Purpose">STM32L151 supply bypass</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56523094</tstamp>
+    </comp>
+    <comp ref="C16">
+      <value>100nF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Purpose">STM32L151 supply bypass</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56526FF7</tstamp>
+    </comp>
+    <comp ref="C10">
+      <value>100nF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Purpose">STM32L151 supply bypass</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565273B0</tstamp>
+    </comp>
+    <comp ref="C6">
+      <value>100nF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Purpose">STM32L151 supply bypass</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565275CC</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>100nF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Purpose">STM32L151 supply bypass</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565279A7</tstamp>
+    </comp>
+    <comp ref="P2">
+      <value>ICSP1</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x05</footprint>
+      <libsource lib="conn" part="CONN_01X05"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5652C156</tstamp>
+    </comp>
+    <comp ref="SW1">
+      <value>SW_PUSH</value>
+      <footprint>Buttons_Switches_SMD:SW_SPST_PTS645</footprint>
+      <fields>
+        <field name="MFG">C&amp;K Components</field>
+        <field name="MFG_PN">PTS645SM43SMTR92 LFS</field>
+      </fields>
+      <libsource lib="device" part="SW_PUSH"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56573D9E</tstamp>
+    </comp>
+    <comp ref="R18">
+      <value>10k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Negative side SMPS feedback</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56574598</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>MCP1700T-3302E/TT</value>
+      <footprint>TO_SOT_Packages_SMD:SOT-23</footprint>
+      <libsource lib="regul" part="AP1117"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565752FE</tstamp>
+    </comp>
+    <comp ref="BT1">
+      <value>CONN_01X02</value>
+      <footprint>Connect:PINHEAD1-2</footprint>
+      <libsource lib="conn" part="CONN_01X02"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565894E5</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>MCP73831T-2ACI/OT</value>
+      <footprint>TO_SOT_Packages_SMD:SOT-23-5</footprint>
+      <libsource lib="std_components" part="MCP73831"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5658FA3D</tstamp>
+    </comp>
+    <comp ref="P1">
+      <value>10118194-0001LF</value>
+      <footprint>Connect:USB_Micro-B</footprint>
+      <fields>
+        <field name="MFG">FCI</field>
+        <field name="MFG_PN">10118194-0001LF</field>
+      </fields>
+      <libsource lib="conn" part="USB_OTG"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565905E8</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>2k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Minimum load for LM79L</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565919BC</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>RED LED</value>
+      <footprint>LEDs:LED-0603</footprint>
+      <libsource lib="device" part="LED"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56594424</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>470</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Minimum load for LM79L</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56594E98</tstamp>
+    </comp>
+    <comp ref="R13">
+      <value>10k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Negative side SMPS feedback</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5659CBE1</tstamp>
+    </comp>
+    <comp ref="D4">
+      <value>BLUE LED</value>
+      <footprint>LEDs:LED-0603</footprint>
+      <libsource lib="device" part="LED"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5659DB65</tstamp>
+    </comp>
+    <comp ref="R23">
+      <value>330</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Minimum load for LM79L</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5659DB6C</tstamp>
+    </comp>
+    <comp ref="R22">
+      <value>10k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Negative side SMPS feedback</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5659F80B</tstamp>
+    </comp>
+    <comp ref="D3">
+      <value>RED LED</value>
+      <footprint>LEDs:LED-0603</footprint>
+      <libsource lib="device" part="LED"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A0D25</tstamp>
+    </comp>
+    <comp ref="R21">
+      <value>470</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Minimum load for LM79L</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A0D2C</tstamp>
+    </comp>
+    <comp ref="D5">
+      <value>GREEN LED</value>
+      <footprint>LEDs:LED-0603</footprint>
+      <libsource lib="device" part="LED"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A24AD</tstamp>
+    </comp>
+    <comp ref="R24">
+      <value>330</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Minimum load for LM79L</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A2CD4</tstamp>
+    </comp>
+    <comp ref="R25">
+      <value>10k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Negative side SMPS feedback</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A5BA9</tstamp>
+    </comp>
+    <comp ref="R16">
+      <value>10k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Negative side SMPS feedback</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A676C</tstamp>
+    </comp>
+    <comp ref="R17">
+      <value>10k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Negative side SMPS feedback</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A7065</tstamp>
+    </comp>
+    <comp ref="U8">
+      <value>TPS7A30</value>
+      <footprint>eink:8MSOP</footprint>
+      <fields>
+        <field name="MFG">Texas Instruments</field>
+        <field name="MFG_PN">TPS7A3001DGNR</field>
+      </fields>
+      <libsource lib="std_components" part="TPS7A30"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565AE726</tstamp>
+    </comp>
+    <comp ref="U7">
+      <value>TPS7A49</value>
+      <footprint>eink:8MSOP</footprint>
+      <fields>
+        <field name="MFG">Texas Instruments</field>
+        <field name="MFG_PN">TPS7A4901DGNR</field>
+      </fields>
+      <libsource lib="std_components" part="TPS7A30"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565B6D8A</tstamp>
+    </comp>
+    <comp ref="U4">
+      <value>MC33171</value>
+      <footprint>Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm</footprint>
+      <fields>
+        <field name="MFG">STMicroelectronics</field>
+        <field name="MFG_PN">MC33171DT</field>
+      </fields>
+      <libsource lib="linear" part="LM741"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565B93F4</tstamp>
+    </comp>
+    <comp ref="TP2">
+      <value>-20V</value>
+      <footprint>Connect:PINTST</footprint>
+      <libsource lib="einkdisplay-cache" part="CONN_1"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565C1DBB</tstamp>
+    </comp>
+    <comp ref="TP5">
+      <value>-20V</value>
+      <footprint>Connect:PINTST</footprint>
+      <libsource lib="einkdisplay-cache" part="CONN_1"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565C5233</tstamp>
+    </comp>
+    <comp ref="TP6">
+      <value>-20V</value>
+      <footprint>Connect:PINTST</footprint>
+      <libsource lib="einkdisplay-cache" part="CONN_1"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565C55C8</tstamp>
+    </comp>
+    <comp ref="R19">
+      <value>140k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Negative side SMPS feedback</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565C6863</tstamp>
+    </comp>
+    <comp ref="R14">
+      <value>12k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Negative side SMPS feedback</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565C6AC2</tstamp>
+    </comp>
+    <comp ref="R20">
+      <value>140k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Negative side SMPS feedback</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565C9078</tstamp>
+    </comp>
+    <comp ref="R15">
+      <value>12k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Negative side SMPS feedback</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565C907F</tstamp>
+    </comp>
+    <comp ref="C14">
+      <value>10nF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Rating">50V</field>
+        <field name="MFG">Murata</field>
+        <field name="MFG_PN">GRM188R71H103KA01D</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565CDC10</tstamp>
+    </comp>
+    <comp ref="C13">
+      <value>4.7µF</value>
+      <footprint>Capacitors_SMD:C_1206</footprint>
+      <fields>
+        <field name="Rating">50V</field>
+        <field name="MFG_PN">UMK316AB7475KL-T</field>
+        <field name="MFG">Taiyo Yuden</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565D3D3E</tstamp>
+    </comp>
+    <comp ref="C12">
+      <value>4.7µF</value>
+      <footprint>Capacitors_SMD:C_1206</footprint>
+      <fields>
+        <field name="Rating">50V</field>
+        <field name="MFG_PN">UMK316AB7475KL-T</field>
+        <field name="MFG">Taiyo Yuden</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A0E74</tstamp>
+    </comp>
+    <comp ref="C21">
+      <value>4.7µF</value>
+      <footprint>Capacitors_SMD:C_1206</footprint>
+      <fields>
+        <field name="Rating">50V</field>
+        <field name="MFG_PN">UMK316AB7475KL-T</field>
+        <field name="MFG">Taiyo Yuden</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A0FA2</tstamp>
+    </comp>
+    <comp ref="C22">
+      <value>4.7µF</value>
+      <footprint>Capacitors_SMD:C_1206</footprint>
+      <fields>
+        <field name="Rating">50V</field>
+        <field name="MFG_PN">UMK316AB7475KL-T</field>
+        <field name="MFG">Taiyo Yuden</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A10D5</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>4.7µF</value>
+      <footprint>Capacitors_SMD:C_1206</footprint>
+      <fields>
+        <field name="Rating">50V</field>
+        <field name="MFG_PN">UMK316AB7475KL-T</field>
+        <field name="MFG">Taiyo Yuden</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A1936</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>4.7µF</value>
+      <footprint>Capacitors_SMD:C_1206</footprint>
+      <fields>
+        <field name="Rating">50V</field>
+        <field name="MFG_PN">UMK316AB7475KL-T</field>
+        <field name="MFG">Taiyo Yuden</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A2010</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>4.7µF</value>
+      <footprint>Capacitors_SMD:C_1206</footprint>
+      <fields>
+        <field name="Rating">50V</field>
+        <field name="MFG_PN">UMK316AB7475KL-T</field>
+        <field name="MFG">Taiyo Yuden</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A4BB8</tstamp>
+    </comp>
+    <comp ref="C7">
+      <value>4.7µF</value>
+      <footprint>Capacitors_SMD:C_1206</footprint>
+      <fields>
+        <field name="Rating">50V</field>
+        <field name="MFG_PN">UMK316AB7475KL-T</field>
+        <field name="MFG">Taiyo Yuden</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A4CF2</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>4.7µF</value>
+      <footprint>Capacitors_SMD:C_1206</footprint>
+      <fields>
+        <field name="Rating">50V</field>
+        <field name="MFG_PN">UMK316AB7475KL-T</field>
+        <field name="MFG">Taiyo Yuden</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A4EC5</tstamp>
+    </comp>
+    <comp ref="C23">
+      <value>100nF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Purpose">STM32L151 supply bypass</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565A758F</tstamp>
+    </comp>
+    <comp ref="C15">
+      <value>10nF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Rating">50V</field>
+        <field name="MFG">Murata</field>
+        <field name="MFG_PN">GRM188R71H103KA01D</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565AB53E</tstamp>
+    </comp>
+    <comp ref="C18">
+      <value>10nF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Rating">50V</field>
+        <field name="MFG">Murata</field>
+        <field name="MFG_PN">GRM188R71H103KA01D</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565AB6CD</tstamp>
+    </comp>
+    <comp ref="C17">
+      <value>10nF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Rating">50V</field>
+        <field name="MFG">Murata</field>
+        <field name="MFG_PN">GRM188R71H103KA01D</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565ABB01</tstamp>
+    </comp>
+    <comp ref="R7">
+      <value>10k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Pull-down for SHDN_POS</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565B22A6</tstamp>
+    </comp>
+    <comp ref="R8">
+      <value>470</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Purpose">Minimum load for LM79L</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="R-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565B54EE</tstamp>
+    </comp>
+    <comp ref="C8">
+      <value>100nF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Purpose">STM32L151 supply bypass</field>
+      </fields>
+      <libsource lib="einkdisplay-cache" part="C-RESCUE-eink_example"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565B5D56</tstamp>
+    </comp>
+    <comp ref="L1">
+      <value>10µH</value>
+      <footprint>Inductors:NR4018_HandSoldering</footprint>
+      <fields>
+        <field name="MFG_PN">LQH44PN100MP0L</field>
+        <field name="MFG">Murata</field>
+      </fields>
+      <libsource lib="device" part="INDUCTOR"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>565C2220</tstamp>
+    </comp>
+    <comp ref="U9">
+      <value>RN-42</value>
+      <footprint>open-project:RN-41</footprint>
+      <fields>
+        <field name="MFG_PN">RN42-I/RM</field>
+        <field name="MFG">Microchip</field>
+      </fields>
+      <libsource lib="std_components" part="RN-42"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5659C0E8</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="device" part="LED">
+      <footprints>
+        <fp>LED-3MM</fp>
+        <fp>LED-5MM</fp>
+        <fp>LED-10MM</fp>
+        <fp>LED-0603</fp>
+        <fp>LED-0805</fp>
+        <fp>LED-1206</fp>
+        <fp>LEDV</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="std_components" part="FPC39-P0P3">
+      <description>FPC Connector, 0.3mm pitch, offset, 39 connections</description>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">FPC39-P0P3</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VNEG" type="input"/>
+        <pin num="2" name="VPOS" type="input"/>
+        <pin num="3" name="VSS" type="input"/>
+        <pin num="4" name="VDD" type="input"/>
+        <pin num="5" name="CL" type="input"/>
+        <pin num="6" name="LE" type="input"/>
+        <pin num="7" name="OE" type="input"/>
+        <pin num="8" name="SHR" type="input"/>
+        <pin num="9" name="NC" type="input"/>
+        <pin num="10" name="NC" type="input"/>
+        <pin num="11" name="SPH" type="input"/>
+        <pin num="12" name="D0" type="input"/>
+        <pin num="13" name="D1" type="input"/>
+        <pin num="14" name="D2" type="input"/>
+        <pin num="15" name="D3" type="input"/>
+        <pin num="16" name="D5" type="input"/>
+        <pin num="18" name="D6" type="input"/>
+        <pin num="19" name="D7" type="input"/>
+        <pin num="20" name="NC" type="input"/>
+        <pin num="21" name="NC" type="input"/>
+        <pin num="22" name="VCOM" type="input"/>
+        <pin num="23" name="GVDD" type="input"/>
+        <pin num="24" name="GVEE" type="input"/>
+        <pin num="25" name="NC" type="input"/>
+        <pin num="26" name="NC" type="input"/>
+        <pin num="27" name="GMODE2" type="input"/>
+        <pin num="28" name="GMODE1" type="input"/>
+        <pin num="29" name="RL" type="input"/>
+        <pin num="30" name="U1CE2" type="input"/>
+        <pin num="31" name="U1CE1" type="input"/>
+        <pin num="32" name="U1SPV" type="input"/>
+        <pin num="33" name="U1CKV" type="input"/>
+        <pin num="34" name="VBORDER" type="input"/>
+        <pin num="35" name="U2CE2" type="input"/>
+        <pin num="36" name="U2CE1" type="input"/>
+        <pin num="37" name="U2SPV" type="input"/>
+        <pin num="38" name="U2CKV" type="input"/>
+        <pin num="39" name="NC" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="std_components" part="DIODESCH">
+      <description>Diode schottky</description>
+      <footprints>
+        <fp>D?</fp>
+        <fp>S*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">DIODESCH</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="K" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="einkdisplay-cache" part="C-RESCUE-eink_example">
+      <footprints>
+        <fp>SM*</fp>
+        <fp>C?</fp>
+        <fp>C1-1</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C-RESCUE-eink_example</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="std_components" part="MCP73831">
+      <description>Lithium Battery Charger</description>
+      <footprints>
+        <fp>SOT-23-5</fp>
+        <fp>SOT23-5</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MCP73831</field>
+      </fields>
+      <pins>
+        <pin num="1" name="STAT" type="input"/>
+        <pin num="2" name="VSS" type="input"/>
+        <pin num="3" name="VBAT" type="input"/>
+        <pin num="4" name="VDD" type="input"/>
+        <pin num="5" name="PROG" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="std_components" part="MOS_P">
+      <aliases>
+        <alias>MOSFET_P</alias>
+      </aliases>
+      <docs>transistors/mos/*.*</docs>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">MOS_P</field>
+      </fields>
+      <pins>
+        <pin num="D" name="D" type="passive"/>
+        <pin num="G" name="G" type="input"/>
+        <pin num="S" name="S" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="IS61LV256AL" part="IS61LV256AL">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">IS61LV256AL</field>
+        <field name="Footprint">MODULE</field>
+        <field name="Datasheet">DOCUMENTATION</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A14" type="input"/>
+        <pin num="2" name="A12" type="input"/>
+        <pin num="3" name="A7" type="input"/>
+        <pin num="4" name="A6" type="input"/>
+        <pin num="5" name="A5" type="input"/>
+        <pin num="6" name="A4" type="input"/>
+        <pin num="7" name="A3" type="input"/>
+        <pin num="8" name="A2" type="input"/>
+        <pin num="9" name="A1" type="input"/>
+        <pin num="10" name="A0" type="input"/>
+        <pin num="11" name="D0" type="input"/>
+        <pin num="12" name="D1" type="input"/>
+        <pin num="13" name="D2" type="input"/>
+        <pin num="14" name="GND" type="input"/>
+        <pin num="15" name="D3" type="input"/>
+        <pin num="16" name="D4" type="input"/>
+        <pin num="17" name="D5" type="input"/>
+        <pin num="18" name="D6" type="input"/>
+        <pin num="19" name="D7" type="input"/>
+        <pin num="20" name="~CE" type="input"/>
+        <pin num="21" name="A10" type="input"/>
+        <pin num="22" name="~OE" type="input"/>
+        <pin num="23" name="A11" type="input"/>
+        <pin num="24" name="A9" type="input"/>
+        <pin num="25" name="A8" type="input"/>
+        <pin num="26" name="A13" type="input"/>
+        <pin num="27" name="~WE" type="input"/>
+        <pin num="28" name="VDD" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="pics" part="pic32mx330f064h">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">pic32mx330f064h</field>
+        <field name="Footprint">MODULE</field>
+        <field name="Datasheet">DOCUMENTATION</field>
+      </fields>
+      <pins>
+        <pin num="1" name="RPE5/A/PMD5" type="input"/>
+        <pin num="2" name="RE6/A/PMD6" type="input"/>
+        <pin num="3" name="RE7/A/PMD7" type="input"/>
+        <pin num="4" name="RPG6/A/PMA5" type="input"/>
+        <pin num="5" name="RPG7/A/PMA4" type="input"/>
+        <pin num="6" name="RPG8/A/PMA3" type="input"/>
+        <pin num="7" name="~MCLR" type="input"/>
+        <pin num="8" name="RPG9/A/PMA2" type="input"/>
+        <pin num="9" name="VSS" type="input"/>
+        <pin num="10" name="VDD" type="input"/>
+        <pin num="11" name="RPB5/A" type="input"/>
+        <pin num="12" name="RB4/A" type="input"/>
+        <pin num="13" name="PGD3/RPB3/A" type="input"/>
+        <pin num="14" name="PGC3/RPB2/A" type="input"/>
+        <pin num="15" name="PGC1/RPB1/A" type="input"/>
+        <pin num="16" name="PGD1/RPB0/A/PMA6" type="input"/>
+        <pin num="17" name="PGC2/RPB6/A" type="input"/>
+        <pin num="18" name="PGD2/RPB7/A" type="input"/>
+        <pin num="19" name="AVDD" type="input"/>
+        <pin num="20" name="AVSS" type="input"/>
+        <pin num="21" name="RPB8/A" type="input"/>
+        <pin num="22" name="RPB9/A/PMA7" type="input"/>
+        <pin num="23" name="RPB10/A/PMA13" type="input"/>
+        <pin num="24" name="RB11/A/PMA12" type="input"/>
+        <pin num="25" name="VSS" type="input"/>
+        <pin num="26" name="VDD" type="input"/>
+        <pin num="27" name="RB12/A/PMA11" type="input"/>
+        <pin num="28" name="RB13/A/PMA10" type="input"/>
+        <pin num="29" name="RPB14/A/PMA1" type="input"/>
+        <pin num="30" name="RPB15/A/PMA0" type="input"/>
+        <pin num="31" name="RPF4/SDA2/PMA9" type="input"/>
+        <pin num="32" name="RPF5/SCL2/PMA8" type="input"/>
+        <pin num="33" name="RPF3" type="input"/>
+        <pin num="34" name="RPF2" type="input"/>
+        <pin num="35" name="RPF6/SCK1" type="input"/>
+        <pin num="36" name="RG3/SDA1" type="input"/>
+        <pin num="37" name="RG2/SCL1" type="input"/>
+        <pin num="38" name="VDD" type="input"/>
+        <pin num="39" name="RC12/OSC1" type="input"/>
+        <pin num="40" name="RC15/OSC2" type="input"/>
+        <pin num="41" name="VSS" type="input"/>
+        <pin num="42" name="RPD8" type="input"/>
+        <pin num="43" name="RPD9" type="input"/>
+        <pin num="44" name="RPD10" type="input"/>
+        <pin num="45" name="RPD11" type="input"/>
+        <pin num="46" name="RPD0" type="input"/>
+        <pin num="47" name="RPC13" type="input"/>
+        <pin num="48" name="RPC14" type="input"/>
+        <pin num="49" name="RPD1" type="input"/>
+        <pin num="50" name="RPD2" type="input"/>
+        <pin num="51" name="RPD3" type="input"/>
+        <pin num="52" name="RPD4" type="input"/>
+        <pin num="53" name="RPD5" type="input"/>
+        <pin num="54" name="RD6" type="input"/>
+        <pin num="55" name="RD7" type="input"/>
+        <pin num="56" name="VCAP" type="input"/>
+        <pin num="57" name="VDD" type="input"/>
+        <pin num="58" name="RPF0" type="input"/>
+        <pin num="59" name="RPF1" type="input"/>
+        <pin num="60" name="RE0/PMD0" type="input"/>
+        <pin num="61" name="RE1/PMD1" type="input"/>
+        <pin num="62" name="RE2/A/PMD2" type="input"/>
+        <pin num="63" name="RPE3/PMD3" type="input"/>
+        <pin num="64" name="RE4/A/PMD4" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="einkdisplay-cache" part="LT3463">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LT3463</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VOUT1" type="power_out"/>
+        <pin num="2" name="SW1" type="passive"/>
+        <pin num="3" name="VIN" type="power_in"/>
+        <pin num="4" name="SW2" type="passive"/>
+        <pin num="5" name="D2" type="passive"/>
+        <pin num="6" name="FB2" type="input"/>
+        <pin num="7" name="VREF" type="power_out"/>
+        <pin num="8" name="~SHDN2" type="input"/>
+        <pin num="9" name="~SHDN1" type="input"/>
+        <pin num="10" name="FB1" type="input"/>
+        <pin num="11" name="GND" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="USB_OTG">
+      <description>micro/mini connector</description>
+      <footprints>
+        <fp>USB*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">USB_OTG</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VCC" type="power_out"/>
+        <pin num="2" name="D-" type="passive"/>
+        <pin num="3" name="D+" type="passive"/>
+        <pin num="4" name="ID" type="power_in"/>
+        <pin num="5" name="GND" type="power_in"/>
+        <pin num="6" name="shield" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="std_components" part="RN-42">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">RN-42</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="input"/>
+        <pin num="2" name="SPI_MOSI" type="input"/>
+        <pin num="3" name="PIO6" type="input"/>
+        <pin num="4" name="PIO7" type="input"/>
+        <pin num="5" name="RESET" type="input"/>
+        <pin num="6" name="SPI_CLK" type="input"/>
+        <pin num="7" name="PCM_CLK" type="input"/>
+        <pin num="8" name="PCM_SYNC" type="input"/>
+        <pin num="9" name="PCM_IN" type="input"/>
+        <pin num="10" name="PCM_OUT" type="input"/>
+        <pin num="11" name="VDD" type="input"/>
+        <pin num="12" name="GND" type="input"/>
+        <pin num="13" name="UART_RX" type="input"/>
+        <pin num="14" name="UART_TX" type="input"/>
+        <pin num="15" name="UART_RTS" type="input"/>
+        <pin num="16" name="UART_CTS" type="input"/>
+        <pin num="17" name="USB_D+" type="input"/>
+        <pin num="18" name="USB_D-" type="input"/>
+        <pin num="19" name="PIO2" type="input"/>
+        <pin num="20" name="PIO3" type="input"/>
+        <pin num="21" name="PIO5" type="input"/>
+        <pin num="22" name="PIO4" type="input"/>
+        <pin num="23" name="SPI_CSB" type="input"/>
+        <pin num="24" name="SPI_MISO" type="input"/>
+        <pin num="28" name="GND" type="input"/>
+        <pin num="29" name="GND" type="input"/>
+        <pin num="30" name="AIO0" type="input"/>
+        <pin num="31" name="PIO8" type="input"/>
+        <pin num="32" name="PIO9" type="input"/>
+        <pin num="33" name="PIO10" type="input"/>
+        <pin num="34" name="PIO11" type="input"/>
+        <pin num="35" name="AIO1" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="POT">
+      <description>Potentionmetre</description>
+      <fields>
+        <field name="Reference">RV</field>
+        <field name="Value">POT</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="std_components" part="TPS7A30">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TPS7A30</field>
+      </fields>
+      <pins>
+        <pin num="1" name="OUT" type="input"/>
+        <pin num="2" name="FB" type="input"/>
+        <pin num="3" name="NC" type="input"/>
+        <pin num="4" name="GND" type="input"/>
+        <pin num="5" name="EN" type="input"/>
+        <pin num="6" name="NR/SS" type="input"/>
+        <pin num="7" name="DNC" type="input"/>
+        <pin num="8" name="IN" type="input"/>
+        <pin num="~" name="EP" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="einkdisplay-cache" part="CONN_1">
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_1</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="einkdisplay-cache" part="R-RESCUE-eink_example">
+      <footprints>
+        <fp>R?</fp>
+        <fp>SM0603</fp>
+        <fp>SM0805</fp>
+        <fp>R?-*</fp>
+        <fp>SM1206</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R-RESCUE-eink_example</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="CONN_01X02">
+      <footprints>
+        <fp>Pin_Header_Straight_1X02</fp>
+        <fp>Pin_Header_Angled_1X02</fp>
+        <fp>Socket_Strip_Straight_1X02</fp>
+        <fp>Socket_Strip_Angled_1X02</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_01X02</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="CONN_01X05">
+      <footprints>
+        <fp>Pin_Header_Straight_1X05</fp>
+        <fp>Pin_Header_Angled_1X05</fp>
+        <fp>Socket_Strip_Straight_1X05</fp>
+        <fp>Socket_Strip_Angled_1X05</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_01X05</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+        <pin num="5" name="P5" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="linear" part="LM741">
+      <description>Op amp</description>
+      <docs>AmpliOp.sch</docs>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LM741</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="input"/>
+        <pin num="2" name="-" type="input"/>
+        <pin num="3" name="+" type="input"/>
+        <pin num="4" name="V-" type="input"/>
+        <pin num="5" name="~" type="input"/>
+        <pin num="6" name="~" type="output"/>
+        <pin num="7" name="V+" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="SW_PUSH">
+      <description>Button</description>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_PUSH</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="regul" part="AP1117">
+      <aliases>
+        <alias>AP1117D15</alias>
+        <alias>AP1117D18</alias>
+        <alias>AP1117D25</alias>
+        <alias>AP1117D33</alias>
+        <alias>AP1117D50</alias>
+        <alias>AP1117E15</alias>
+        <alias>AP1117E18</alias>
+        <alias>AP1117E25</alias>
+        <alias>AP1117E33</alias>
+        <alias>AP1117E50</alias>
+        <alias>AP1117K15</alias>
+        <alias>AP1117K18</alias>
+        <alias>AP1117K25</alias>
+        <alias>AP1117K33</alias>
+        <alias>AP1117K50</alias>
+        <alias>AP1117T15</alias>
+        <alias>AP1117T18</alias>
+        <alias>AP1117T25</alias>
+        <alias>AP1117T33</alias>
+        <alias>AP1117T50</alias>
+        <alias>AP1117Y15</alias>
+        <alias>AP1117Y18</alias>
+        <alias>AP1117Y25</alias>
+        <alias>AP1117Y33</alias>
+        <alias>AP1117Y50</alias>
+      </aliases>
+      <description>Fixed/Adjustable 1A Low Dropout regulator, Positive</description>
+      <docs>http://www.diodes.com/datasheets/AP1117.pdf</docs>
+      <footprints>
+        <fp>SOT223</fp>
+        <fp>SOT89-3</fp>
+        <fp>TO220-3</fp>
+        <fp>TO252</fp>
+        <fp>TO263</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AP1117</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND/ADJ" type="power_in"/>
+        <pin num="2" name="VO" type="power_out"/>
+        <pin num="3" name="VI" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="SD_Card">
+      <description>SD Card Reader</description>
+      <docs>http://portal.fciconnect.com/Comergent//fci/drawing/10067847.pdf</docs>
+      <footprints>
+        <fp>SD_Card_Receptacle</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">CON</field>
+        <field name="Value">SD_Card</field>
+        <field name="Footprint">10067847-001</field>
+      </fields>
+      <pins>
+        <pin num="1" name="CD/DAT3" type="input"/>
+        <pin num="2" name="CMD" type="input"/>
+        <pin num="3" name="VSS" type="input"/>
+        <pin num="4" name="VDD" type="input"/>
+        <pin num="5" name="CLK" type="input"/>
+        <pin num="6" name="VSS" type="input"/>
+        <pin num="7" name="DAT0" type="input"/>
+        <pin num="8" name="DAT1" type="input"/>
+        <pin num="9" name="DAT2" type="input"/>
+        <pin num="10" name="CARD_DETECT" type="input"/>
+        <pin num="11" name="WRITE_PROTECT" type="input"/>
+        <pin num="12" name="SHELL1" type="input"/>
+        <pin num="13" name="SHELL2" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="INDUCTOR">
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">INDUCTOR</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="pics">
+      <uri>/home/david/KiCAD/pics.lib</uri>
+    </library>
+    <library logical="regul">
+      <uri>/usr/share/kicad/library/regul.lib</uri>
+    </library>
+    <library logical="einkdisplay-cache">
+      <uri>/home/david/KiCAD/einkdisplay/einkdisplay-cache.lib</uri>
+    </library>
+    <library logical="device">
+      <uri>/usr/share/kicad/library/device.lib</uri>
+    </library>
+    <library logical="conn">
+      <uri>/usr/share/kicad/library/conn.lib</uri>
+    </library>
+    <library logical="linear">
+      <uri>/usr/share/kicad/library/linear.lib</uri>
+    </library>
+    <library logical="IS61LV256AL">
+      <uri>/home/david/KiCAD/einkdisplay/IS61LV256AL.lib</uri>
+    </library>
+    <library logical="std_components">
+      <uri>/home/david/KiCAD/std_components.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/U1RX">
+      <node ref="U6" pin="44"/>
+      <node ref="U9" pin="13"/>
+    </net>
+    <net code="2" name="/U1TX">
+      <node ref="U6" pin="45"/>
+      <node ref="U9" pin="14"/>
+    </net>
+    <net code="3" name="/U1CTS">
+      <node ref="U6" pin="43"/>
+      <node ref="U9" pin="16"/>
+    </net>
+    <net code="4" name="/U1RTS">
+      <node ref="U9" pin="15"/>
+      <node ref="U6" pin="46"/>
+    </net>
+    <net code="5" name="/FACT_RST">
+      <node ref="U9" pin="22"/>
+      <node ref="R22" pin="2"/>
+      <node ref="U6" pin="42"/>
+    </net>
+    <net code="6" name="/RN_RST">
+      <node ref="R13" pin="2"/>
+      <node ref="U6" pin="40"/>
+      <node ref="U9" pin="5"/>
+    </net>
+    <net code="7" name="Net-(D4-Pad1)">
+      <node ref="D4" pin="1"/>
+      <node ref="R23" pin="1"/>
+    </net>
+    <net code="8" name="Net-(D4-Pad2)">
+      <node ref="D4" pin="2"/>
+      <node ref="U9" pin="19"/>
+    </net>
+    <net code="9" name="GND">
+      <node ref="U8" pin="~"/>
+      <node ref="U8" pin="4"/>
+      <node ref="U7" pin="4"/>
+      <node ref="U7" pin="~"/>
+      <node ref="U9" pin="1"/>
+      <node ref="R15" pin="2"/>
+      <node ref="C21" pin="2"/>
+      <node ref="C3" pin="2"/>
+      <node ref="C1" pin="2"/>
+      <node ref="C14" pin="2"/>
+      <node ref="C15" pin="2"/>
+      <node ref="C23" pin="2"/>
+      <node ref="C5" pin="2"/>
+      <node ref="C4" pin="2"/>
+      <node ref="C7" pin="2"/>
+      <node ref="C12" pin="2"/>
+      <node ref="C8" pin="2"/>
+      <node ref="U9" pin="29"/>
+      <node ref="U9" pin="28"/>
+      <node ref="C16" pin="2"/>
+      <node ref="C22" pin="2"/>
+      <node ref="C10" pin="2"/>
+      <node ref="U9" pin="12"/>
+      <node ref="C13" pin="2"/>
+      <node ref="C20" pin="1"/>
+      <node ref="P1" pin="6"/>
+      <node ref="SW1" pin="2"/>
+      <node ref="C19" pin="2"/>
+      <node ref="U3" pin="1"/>
+      <node ref="P1" pin="5"/>
+      <node ref="P2" pin="3"/>
+      <node ref="C2" pin="2"/>
+      <node ref="U6" pin="25"/>
+      <node ref="R6" pin="2"/>
+      <node ref="C6" pin="2"/>
+      <node ref="U6" pin="41"/>
+      <node ref="U6" pin="20"/>
+      <node ref="U6" pin="9"/>
+      <node ref="U6" pin="56"/>
+      <node ref="R5" pin="2"/>
+      <node ref="CON1" pin="3"/>
+      <node ref="CON1" pin="6"/>
+      <node ref="R14" pin="2"/>
+      <node ref="U1" pin="2"/>
+      <node ref="BT1" pin="2"/>
+      <node ref="R1" pin="2"/>
+      <node ref="TP2" pin="1"/>
+      <node ref="J1" pin="34"/>
+      <node ref="J1" pin="31"/>
+      <node ref="U2" pin="14"/>
+      <node ref="R12" pin="2"/>
+      <node ref="U5" pin="11"/>
+      <node ref="C11" pin="2"/>
+      <node ref="RV1" pin="3"/>
+      <node ref="J1" pin="8"/>
+      <node ref="J1" pin="3"/>
+      <node ref="R23" pin="2"/>
+    </net>
+    <net code="10" name="/RC13">
+      <node ref="J1" pin="38"/>
+      <node ref="U6" pin="47"/>
+      <node ref="J1" pin="37"/>
+    </net>
+    <net code="11" name="Net-(C1-Pad1)">
+      <node ref="D1" pin="2"/>
+      <node ref="C1" pin="1"/>
+      <node ref="U1" pin="4"/>
+      <node ref="P1" pin="1"/>
+    </net>
+    <net code="12" name="Net-(R2-Pad1)">
+      <node ref="U1" pin="1"/>
+      <node ref="R2" pin="1"/>
+    </net>
+    <net code="13" name="Net-(D1-Pad1)">
+      <node ref="R2" pin="2"/>
+      <node ref="D1" pin="1"/>
+    </net>
+    <net code="14" name="Net-(D5-Pad1)">
+      <node ref="D5" pin="1"/>
+      <node ref="U9" pin="21"/>
+    </net>
+    <net code="15" name="Net-(D5-Pad2)">
+      <node ref="D5" pin="2"/>
+      <node ref="R24" pin="2"/>
+    </net>
+    <net code="16" name="+3.3V">
+      <node ref="C11" pin="1"/>
+      <node ref="U6" pin="19"/>
+      <node ref="U6" pin="10"/>
+      <node ref="R22" pin="1"/>
+      <node ref="U6" pin="38"/>
+      <node ref="R17" pin="2"/>
+      <node ref="U2" pin="28"/>
+      <node ref="R7" pin="2"/>
+      <node ref="R13" pin="1"/>
+      <node ref="C6" pin="1"/>
+      <node ref="D3" pin="2"/>
+      <node ref="CON1" pin="4"/>
+      <node ref="C10" pin="1"/>
+      <node ref="U6" pin="26"/>
+      <node ref="C16" pin="1"/>
+      <node ref="U6" pin="57"/>
+      <node ref="R18" pin="2"/>
+      <node ref="R24" pin="1"/>
+      <node ref="C7" pin="1"/>
+      <node ref="U3" pin="2"/>
+      <node ref="R25" pin="1"/>
+      <node ref="C20" pin="2"/>
+      <node ref="C19" pin="1"/>
+      <node ref="P2" pin="2"/>
+      <node ref="C2" pin="1"/>
+      <node ref="R16" pin="2"/>
+    </net>
+    <net code="17" name="/AUTO_DISCOVER">
+      <node ref="U9" pin="20"/>
+      <node ref="R25" pin="2"/>
+    </net>
+    <net code="18" name="/AUTO_CONNECT">
+      <node ref="R16" pin="1"/>
+      <node ref="U9" pin="3"/>
+    </net>
+    <net code="19" name="Net-(D3-Pad1)">
+      <node ref="R21" pin="2"/>
+      <node ref="D3" pin="1"/>
+    </net>
+    <net code="20" name="Net-(R21-Pad1)">
+      <node ref="R21" pin="1"/>
+      <node ref="U9" pin="31"/>
+    </net>
+    <net code="21" name="/RC14">
+      <node ref="J1" pin="33"/>
+      <node ref="J1" pin="32"/>
+      <node ref="U6" pin="48"/>
+    </net>
+    <net code="22" name="Net-(RV1-Pad2)">
+      <node ref="U4" pin="3"/>
+      <node ref="RV1" pin="2"/>
+    </net>
+    <net code="23" name="Net-(U6-Pad13)">
+      <node ref="U6" pin="13"/>
+    </net>
+    <net code="24" name="Net-(U6-Pad14)">
+      <node ref="U6" pin="14"/>
+    </net>
+    <net code="25" name="Net-(R18-Pad1)">
+      <node ref="SW1" pin="1"/>
+      <node ref="R18" pin="1"/>
+      <node ref="U6" pin="39"/>
+    </net>
+    <net code="26" name="/VPOS">
+      <node ref="U7" pin="1"/>
+      <node ref="J1" pin="2"/>
+      <node ref="TP5" pin="1"/>
+      <node ref="C17" pin="1"/>
+      <node ref="R19" pin="2"/>
+      <node ref="C21" pin="1"/>
+    </net>
+    <net code="27" name="/~MCLR">
+      <node ref="R8" pin="1"/>
+      <node ref="U6" pin="7"/>
+      <node ref="P2" pin="1"/>
+    </net>
+    <net code="28" name="/SMPS_V+">
+      <node ref="L2" pin="1"/>
+      <node ref="C4" pin="1"/>
+      <node ref="L1" pin="1"/>
+      <node ref="U5" pin="3"/>
+      <node ref="Q1" pin="D"/>
+    </net>
+    <net code="29" name="/GVDD">
+      <node ref="TP3" pin="1"/>
+      <node ref="U5" pin="1"/>
+      <node ref="U7" pin="5"/>
+      <node ref="U4" pin="7"/>
+      <node ref="C12" pin="1"/>
+      <node ref="J1" pin="23"/>
+      <node ref="U7" pin="8"/>
+      <node ref="R11" pin="1"/>
+    </net>
+    <net code="30" name="Net-(C23-Pad1)">
+      <node ref="U9" pin="11"/>
+      <node ref="C23" pin="1"/>
+    </net>
+    <net code="31" name="Net-(C15-Pad1)">
+      <node ref="U8" pin="6"/>
+      <node ref="C15" pin="1"/>
+    </net>
+    <net code="32" name="Net-(C14-Pad1)">
+      <node ref="U7" pin="6"/>
+      <node ref="C14" pin="1"/>
+    </net>
+    <net code="33" name="Net-(U9-Pad6)">
+      <node ref="U9" pin="6"/>
+    </net>
+    <net code="34" name="Net-(U9-Pad7)">
+      <node ref="U9" pin="7"/>
+    </net>
+    <net code="35" name="Net-(U9-Pad8)">
+      <node ref="U9" pin="8"/>
+    </net>
+    <net code="36" name="Net-(U9-Pad9)">
+      <node ref="U9" pin="9"/>
+    </net>
+    <net code="37" name="Net-(U9-Pad10)">
+      <node ref="U9" pin="10"/>
+    </net>
+    <net code="38" name="Net-(U9-Pad30)">
+      <node ref="U9" pin="30"/>
+    </net>
+    <net code="39" name="Net-(U9-Pad32)">
+      <node ref="U9" pin="32"/>
+    </net>
+    <net code="40" name="Net-(U9-Pad23)">
+      <node ref="U9" pin="23"/>
+    </net>
+    <net code="41" name="Net-(U9-Pad33)">
+      <node ref="U9" pin="33"/>
+    </net>
+    <net code="42" name="Net-(U9-Pad24)">
+      <node ref="U9" pin="24"/>
+    </net>
+    <net code="43" name="Net-(U9-Pad34)">
+      <node ref="U9" pin="34"/>
+    </net>
+    <net code="44" name="Net-(U9-Pad35)">
+      <node ref="U9" pin="35"/>
+    </net>
+    <net code="45" name="Net-(U9-Pad17)">
+      <node ref="U9" pin="17"/>
+    </net>
+    <net code="46" name="Net-(U9-Pad18)">
+      <node ref="U9" pin="18"/>
+    </net>
+    <net code="47" name="Net-(CON1-Pad13)">
+      <node ref="CON1" pin="13"/>
+    </net>
+    <net code="48" name="Net-(CON1-Pad12)">
+      <node ref="CON1" pin="12"/>
+    </net>
+    <net code="49" name="/ICSP_CLK">
+      <node ref="U6" pin="17"/>
+      <node ref="P2" pin="5"/>
+    </net>
+    <net code="50" name="/ICSP_DAT">
+      <node ref="P2" pin="4"/>
+      <node ref="U6" pin="18"/>
+    </net>
+    <net code="51" name="Net-(C8-Pad1)">
+      <node ref="C8" pin="1"/>
+      <node ref="R8" pin="2"/>
+      <node ref="R7" pin="1"/>
+    </net>
+    <net code="52" name="Net-(U9-Pad2)">
+      <node ref="U9" pin="2"/>
+    </net>
+    <net code="53" name="Net-(U4-Pad5)">
+      <node ref="U4" pin="5"/>
+    </net>
+    <net code="54" name="Net-(U4-Pad1)">
+      <node ref="U4" pin="1"/>
+    </net>
+    <net code="55" name="Net-(U7-Pad7)">
+      <node ref="U7" pin="7"/>
+    </net>
+    <net code="56" name="Net-(U7-Pad3)">
+      <node ref="U7" pin="3"/>
+    </net>
+    <net code="57" name="/BAUDRATE">
+      <node ref="R17" pin="1"/>
+      <node ref="U9" pin="4"/>
+    </net>
+    <net code="58" name="Net-(R1-Pad1)">
+      <node ref="U1" pin="5"/>
+      <node ref="R1" pin="1"/>
+    </net>
+    <net code="59" name="Net-(U8-Pad3)">
+      <node ref="U8" pin="3"/>
+    </net>
+    <net code="60" name="Net-(U8-Pad7)">
+      <node ref="U8" pin="7"/>
+    </net>
+    <net code="61" name="Net-(C17-Pad2)">
+      <node ref="C17" pin="2"/>
+      <node ref="U7" pin="2"/>
+      <node ref="R14" pin="1"/>
+      <node ref="R19" pin="1"/>
+    </net>
+    <net code="62" name="Net-(C18-Pad2)">
+      <node ref="R15" pin="1"/>
+      <node ref="C18" pin="2"/>
+      <node ref="U8" pin="2"/>
+      <node ref="R20" pin="1"/>
+    </net>
+    <net code="63" name="/VNEG">
+      <node ref="R20" pin="2"/>
+      <node ref="C22" pin="1"/>
+      <node ref="C18" pin="1"/>
+      <node ref="TP6" pin="1"/>
+      <node ref="U8" pin="1"/>
+      <node ref="J1" pin="1"/>
+    </net>
+    <net code="64" name="Net-(CON1-Pad9)">
+      <node ref="CON1" pin="9"/>
+    </net>
+    <net code="65" name="Net-(CON1-Pad8)">
+      <node ref="CON1" pin="8"/>
+    </net>
+    <net code="66" name="/PMA1">
+      <node ref="U2" pin="9"/>
+      <node ref="U6" pin="29"/>
+    </net>
+    <net code="67" name="/PMA4">
+      <node ref="U6" pin="5"/>
+      <node ref="U2" pin="6"/>
+    </net>
+    <net code="68" name="/PMA3">
+      <node ref="U6" pin="6"/>
+      <node ref="U2" pin="7"/>
+    </net>
+    <net code="69" name="/PMA2">
+      <node ref="U2" pin="8"/>
+      <node ref="U6" pin="8"/>
+    </net>
+    <net code="70" name="/PMA11">
+      <node ref="U6" pin="27"/>
+      <node ref="U2" pin="23"/>
+    </net>
+    <net code="71" name="/PMA10">
+      <node ref="U2" pin="21"/>
+      <node ref="U6" pin="28"/>
+    </net>
+    <net code="72" name="/PMA0">
+      <node ref="U2" pin="10"/>
+      <node ref="U6" pin="30"/>
+    </net>
+    <net code="73" name="/PMD4">
+      <node ref="U2" pin="16"/>
+      <node ref="U6" pin="64"/>
+    </net>
+    <net code="74" name="/SD_DAT">
+      <node ref="U6" pin="34"/>
+      <node ref="CON1" pin="7"/>
+    </net>
+    <net code="75" name="/SD_CLK">
+      <node ref="CON1" pin="5"/>
+      <node ref="U6" pin="35"/>
+    </net>
+    <net code="76" name="/SD_IN">
+      <node ref="CON1" pin="2"/>
+      <node ref="U6" pin="33"/>
+    </net>
+    <net code="77" name="/SD_CS">
+      <node ref="CON1" pin="1"/>
+      <node ref="U6" pin="36"/>
+    </net>
+    <net code="78" name="/PMD0">
+      <node ref="J1" pin="12"/>
+      <node ref="U2" pin="11"/>
+      <node ref="U6" pin="60"/>
+    </net>
+    <net code="79" name="/PMD1">
+      <node ref="U6" pin="61"/>
+      <node ref="U2" pin="12"/>
+      <node ref="J1" pin="13"/>
+    </net>
+    <net code="80" name="/PMD2">
+      <node ref="U6" pin="62"/>
+      <node ref="U2" pin="13"/>
+      <node ref="J1" pin="14"/>
+    </net>
+    <net code="81" name="/PMD3">
+      <node ref="J1" pin="15"/>
+      <node ref="U6" pin="63"/>
+      <node ref="U2" pin="15"/>
+    </net>
+    <net code="82" name="/GVEE">
+      <node ref="TP4" pin="1"/>
+      <node ref="U4" pin="4"/>
+      <node ref="R4" pin="2"/>
+      <node ref="R10" pin="2"/>
+      <node ref="D2" pin="1"/>
+      <node ref="J1" pin="24"/>
+      <node ref="C13" pin="1"/>
+      <node ref="U8" pin="5"/>
+      <node ref="U8" pin="8"/>
+    </net>
+    <net code="83" name="/VPOS_CTRL">
+      <node ref="R5" pin="1"/>
+      <node ref="U6" pin="59"/>
+      <node ref="U5" pin="9"/>
+    </net>
+    <net code="84" name="Net-(C9-Pad2)">
+      <node ref="C9" pin="2"/>
+      <node ref="D2" pin="2"/>
+      <node ref="U5" pin="5"/>
+    </net>
+    <net code="85" name="/SMPS_CTRL">
+      <node ref="Q1" pin="G"/>
+      <node ref="R3" pin="2"/>
+      <node ref="U6" pin="15"/>
+    </net>
+    <net code="86" name="+BATT">
+      <node ref="C5" pin="1"/>
+      <node ref="U3" pin="3"/>
+      <node ref="BT1" pin="1"/>
+      <node ref="U1" pin="3"/>
+      <node ref="C3" pin="1"/>
+      <node ref="R3" pin="1"/>
+      <node ref="Q1" pin="S"/>
+    </net>
+    <net code="87" name="Net-(J1-Pad9)">
+      <node ref="J1" pin="9"/>
+    </net>
+    <net code="88" name="Net-(R4-Pad1)">
+      <node ref="RV1" pin="1"/>
+      <node ref="R4" pin="1"/>
+    </net>
+    <net code="89" name="Net-(J1-Pad10)">
+      <node ref="J1" pin="10"/>
+    </net>
+    <net code="90" name="Net-(L1-Pad2)">
+      <node ref="U5" pin="2"/>
+      <node ref="L1" pin="2"/>
+    </net>
+    <net code="91" name="Net-(C9-Pad1)">
+      <node ref="L2" pin="2"/>
+      <node ref="U5" pin="4"/>
+      <node ref="C9" pin="1"/>
+    </net>
+    <net code="92" name="Net-(R10-Pad1)">
+      <node ref="U5" pin="6"/>
+      <node ref="R9" pin="2"/>
+      <node ref="R10" pin="1"/>
+    </net>
+    <net code="93" name="Net-(R9-Pad1)">
+      <node ref="U5" pin="7"/>
+      <node ref="R9" pin="1"/>
+    </net>
+    <net code="94" name="/VNEG_CTRL">
+      <node ref="U5" pin="8"/>
+      <node ref="R6" pin="1"/>
+      <node ref="U6" pin="58"/>
+    </net>
+    <net code="95" name="Net-(R11-Pad2)">
+      <node ref="R12" pin="1"/>
+      <node ref="R11" pin="2"/>
+      <node ref="U5" pin="10"/>
+    </net>
+    <net code="96" name="/PMA9">
+      <node ref="U6" pin="31"/>
+      <node ref="U2" pin="24"/>
+    </net>
+    <net code="97" name="/PMA6">
+      <node ref="U6" pin="16"/>
+      <node ref="U2" pin="4"/>
+    </net>
+    <net code="98" name="/PMA5">
+      <node ref="U2" pin="5"/>
+      <node ref="U6" pin="4"/>
+    </net>
+    <net code="99" name="/IS-~CE">
+      <node ref="U2" pin="20"/>
+      <node ref="U6" pin="12"/>
+    </net>
+    <net code="100" name="/IS-~OE">
+      <node ref="U6" pin="53"/>
+      <node ref="U2" pin="22"/>
+    </net>
+    <net code="101" name="/PMA7">
+      <node ref="U6" pin="22"/>
+      <node ref="U2" pin="3"/>
+    </net>
+    <net code="102" name="/PMA8">
+      <node ref="U6" pin="32"/>
+      <node ref="U2" pin="25"/>
+    </net>
+    <net code="103" name="/PMA13">
+      <node ref="U6" pin="23"/>
+      <node ref="U2" pin="26"/>
+    </net>
+    <net code="104" name="/IS-~WE">
+      <node ref="U6" pin="52"/>
+      <node ref="U2" pin="27"/>
+    </net>
+    <net code="105" name="/PMD7">
+      <node ref="J1" pin="19"/>
+      <node ref="U2" pin="19"/>
+      <node ref="U6" pin="3"/>
+    </net>
+    <net code="106" name="/RD7">
+      <node ref="J1" pin="30"/>
+      <node ref="J1" pin="29"/>
+      <node ref="U6" pin="55"/>
+      <node ref="J1" pin="36"/>
+      <node ref="J1" pin="35"/>
+      <node ref="J1" pin="4"/>
+    </net>
+    <net code="107" name="/RD6">
+      <node ref="U6" pin="54"/>
+      <node ref="J1" pin="11"/>
+      <node ref="J1" pin="5"/>
+    </net>
+    <net code="108" name="/PMD5">
+      <node ref="U6" pin="1"/>
+      <node ref="J1" pin="16"/>
+      <node ref="U2" pin="17"/>
+    </net>
+    <net code="109" name="/PMD6">
+      <node ref="U6" pin="2"/>
+      <node ref="J1" pin="18"/>
+      <node ref="U2" pin="18"/>
+    </net>
+    <net code="110" name="Net-(J1-Pad25)">
+      <node ref="J1" pin="25"/>
+    </net>
+    <net code="111" name="Net-(J1-Pad20)">
+      <node ref="J1" pin="20"/>
+    </net>
+    <net code="112" name="Net-(J1-Pad21)">
+      <node ref="J1" pin="21"/>
+    </net>
+    <net code="113" name="Net-(J1-Pad26)">
+      <node ref="J1" pin="26"/>
+    </net>
+    <net code="114" name="Net-(J1-Pad39)">
+      <node ref="J1" pin="39"/>
+    </net>
+    <net code="115" name="/RB5">
+      <node ref="U2" pin="1"/>
+      <node ref="U6" pin="11"/>
+    </net>
+    <net code="116" name="/PMA12">
+      <node ref="U6" pin="24"/>
+      <node ref="U2" pin="2"/>
+    </net>
+    <net code="117" name="/VCOM">
+      <node ref="J1" pin="22"/>
+      <node ref="U4" pin="2"/>
+      <node ref="U4" pin="6"/>
+      <node ref="TP1" pin="1"/>
+    </net>
+    <net code="118" name="Net-(P1-Pad4)">
+      <node ref="P1" pin="4"/>
+    </net>
+    <net code="119" name="/RD3">
+      <node ref="J1" pin="6"/>
+      <node ref="U6" pin="51"/>
+    </net>
+    <net code="120" name="/RD2">
+      <node ref="J1" pin="7"/>
+      <node ref="U6" pin="50"/>
+    </net>
+    <net code="121" name="/RD1">
+      <node ref="J1" pin="28"/>
+      <node ref="U6" pin="49"/>
+      <node ref="J1" pin="27"/>
+    </net>
+    <net code="122" name="Net-(P1-Pad2)">
+      <node ref="P1" pin="2"/>
+    </net>
+    <net code="123" name="Net-(P1-Pad3)">
+      <node ref="P1" pin="3"/>
+    </net>
+    <net code="124" name="/SD_WP">
+      <node ref="CON1" pin="11"/>
+      <node ref="U6" pin="37"/>
+    </net>
+    <net code="125" name="/SD_DET">
+      <node ref="CON1" pin="10"/>
+      <node ref="U6" pin="21"/>
+    </net>
+  </nets>
+</export>

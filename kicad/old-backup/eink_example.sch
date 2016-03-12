@@ -1,0 +1,1189 @@
+EESchema Schematic File Version 2  date to 23. toukokuuta 2013 21.23.33
+LIBS:regul
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:linear
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:stm32
+LIBS:ed060sc4
+LIBS:dc-dc
+LIBS:conn
+LIBS:microchip-technology
+LIBS:eink_example-cache
+LIBS:eink_power-cache
+EELAYER 24 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "E-ink example schematic"
+Date "23 may 2013"
+Rev "1"
+Comp "Petteri Aimonen <jpa@eink.mail.kapsi.fi>"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L GND #PWR8
+U 1 1 519E92C8
+P 3200 4550
+F 0 "#PWR8" H 3200 4550 30  0001 C CNN
+F 1 "GND" H 3200 4620 30  0001 C CNN
+F 2 "" H 3200 4550 60  0000 C CNN
+F 3 "" H 3200 4550 60  0000 C CNN
+	1    3200 4550
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR1
+U 1 1 519E92C9
+P 1100 3450
+F 0 "#PWR1" H 1100 3450 30  0001 C CNN
+F 1 "GND" H 1100 3520 30  0001 C CNN
+F 2 "" H 1100 3450 60  0000 C CNN
+F 3 "" H 1100 3450 60  0000 C CNN
+	1    1100 3450
+	1    0    0    -1  
+$EndComp
+Text Label 1400 2850 2    60   ~ 0
+GMODE
+Text Label 1400 3450 2    60   ~ 0
+SPV
+Text Label 1400 3550 2    60   ~ 0
+CKV
+Text Label 4950 2750 2    60   ~ 0
+SPV
+Text Label 4950 2850 2    60   ~ 0
+CKV
+$Comp
+L GND #PWR19
+U 1 1 519E92CA
+P 6250 4600
+F 0 "#PWR19" H 6250 4600 30  0001 C CNN
+F 1 "GND" H 6250 4670 30  0001 C CNN
+F 2 "" H 6250 4600 60  0000 C CNN
+F 3 "" H 6250 4600 60  0000 C CNN
+	1    6250 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR18
+U 1 1 519E92CB
+P 6100 850
+F 0 "#PWR18" H 6100 890 30  0001 C CNN
+F 1 "+3.3V" H 6100 950 30  0000 C CNN
+F 2 "" H 6100 850 60  0000 C CNN
+F 3 "" H 6100 850 60  0000 C CNN
+	1    6100 850 
+	1    0    0    -1  
+$EndComp
+Text Label 6600 5550 0    60   ~ 0
+VPOS
+Text Label 6600 7000 0    60   ~ 0
+VNEG
+Text Label 5350 7300 0    60   ~ 0
+GVEE
+Text Label 5150 5250 0    60   ~ 0
+GVDD
+Text Label 3400 4650 3    60   ~ 0
+VNEG
+Text Label 3000 4650 3    60   ~ 0
+GVEE
+Text Label 3000 2200 1    60   ~ 0
+GVDD
+Text Label 3400 2200 1    60   ~ 0
+VPOS
+Text Label 1400 3250 2    60   ~ 0
+EINK_VDD
+Text Label 3200 2200 1    60   ~ 0
+EINK_VDD
+$Comp
+L LM358 U1
+U 1 1 514EF6E7
+P 2250 1250
+F 0 "U1" H 2200 1050 60  0000 L CNN
+F 1 "LM358" H 2200 1500 60  0000 L CNN
+F 2 "SO8E" H 2250 1250 60  0001 C CNN
+F 3 "" H 2250 1250 60  0000 C CNN
+F 4 "Amplifier for VBORDER and VCOM" H -4650 -1650 60  0001 C CNN "Purpose"
+F 5 "1467656" H -4650 -1650 60  0001 C CNN "Farnell"
+	1    2250 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L POT RV1
+U 1 1 514EFD03
+P 1600 1150
+F 0 "RV1" H 1600 1050 50  0000 C CNN
+F 1 "10k" H 1600 1150 50  0000 C CNN
+F 2 "BOURNS_SMD_TRIMMER" H 1600 1150 60  0001 C CNN
+F 3 "~" H 1600 1150 60  0000 C CNN
+F 4 "VCOM trimmer" H -3850 -4300 60  0001 C CNN "Purpose"
+F 5 "1360937" H -3850 -4300 60  0001 C CNN "Farnell"
+	1    1600 1150
+	0    1    -1   0   
+$EndComp
+$Comp
+L R R2
+U 1 1 514EFEC9
+P 1600 1650
+F 0 "R2" V 1680 1650 40  0000 C CNN
+F 1 "47k" V 1607 1649 40  0000 C CNN
+F 2 "SM0402_r" V 1530 1650 30  0001 C CNN
+F 3 "~" H 1600 1650 30  0000 C CNN
+F 4 "VCOM voltage divider" V 1600 -2050 60  0001 C CNN "Purpose"
+	1    1600 1650
+	-1   0    0    -1  
+$EndComp
+Text Label 2150 2150 1    60   ~ 0
+VNEG
+$Comp
+L GND #PWR2
+U 1 1 514F0048
+P 1600 850
+F 0 "#PWR2" H 1600 850 30  0001 C CNN
+F 1 "GND" H 1600 920 30  0001 C CNN
+F 2 "" H 1600 850 60  0000 C CNN
+F 3 "" H 1600 850 60  0000 C CNN
+	1    1600 850 
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	4100 4050 5050 4050
+Wire Wire Line
+	5050 3950 4100 3950
+Wire Wire Line
+	4100 3850 5050 3850
+Wire Wire Line
+	5050 3750 4100 3750
+Wire Wire Line
+	4100 3650 5050 3650
+Wire Wire Line
+	5050 3550 4100 3550
+Wire Wire Line
+	4100 3450 5050 3450
+Wire Wire Line
+	5050 3350 4100 3350
+Wire Wire Line
+	4100 3250 5050 3250
+Wire Wire Line
+	1700 2850 1700 2950
+Wire Wire Line
+	1400 2850 1700 2850
+Wire Wire Line
+	1700 3950 1500 3950
+Wire Wire Line
+	1500 3950 1500 3450
+Wire Wire Line
+	1400 3450 1700 3450
+Connection ~ 1500 3450
+Wire Wire Line
+	1400 3550 1700 3550
+Wire Wire Line
+	1550 3550 1550 4050
+Wire Wire Line
+	1550 4050 1700 4050
+Connection ~ 1550 3550
+Wire Wire Line
+	1400 3250 1700 3250
+Wire Wire Line
+	1600 3750 1700 3750
+Wire Wire Line
+	1600 3850 1700 3850
+Connection ~ 1600 3750
+Wire Wire Line
+	1600 3250 1600 3850
+Connection ~ 1600 3250
+Wire Wire Line
+	1100 3350 1700 3350
+Wire Wire Line
+	6250 4600 6250 4450
+Wire Wire Line
+	6250 4450 6850 4450
+Connection ~ 6400 4450
+Connection ~ 6250 4450
+Connection ~ 6550 4450
+Wire Wire Line
+	6100 850  6100 950 
+Wire Wire Line
+	6100 950  6850 950 
+Connection ~ 6250 950 
+Connection ~ 6400 950 
+Connection ~ 6550 950 
+Connection ~ 6100 950 
+Wire Wire Line
+	3400 4550 3400 4650
+Wire Wire Line
+	3000 4550 3000 4650
+Wire Wire Line
+	3000 2250 3000 2100
+Wire Wire Line
+	3400 2250 3400 2100
+Wire Wire Line
+	3200 2100 3200 2250
+Wire Wire Line
+	1750 1350 1750 1700
+Wire Wire Line
+	1750 1700 2800 1700
+Wire Wire Line
+	2800 1250 2800 2250
+Wire Wire Line
+	2800 1250 2750 1250
+Connection ~ 2800 1700
+Wire Wire Line
+	1600 850  1600 900 
+$Comp
+L CONN_6 P1
+U 1 1 514F3CEE
+P 9900 2700
+F 0 "P1" V 9850 2700 60  0000 C CNN
+F 1 "DEBUG" V 9950 2700 60  0000 C CNN
+F 2 "SIL-6" H 9900 2700 60  0001 C CNN
+F 3 "" H 9900 2700 60  0000 C CNN
+F 4 "Connection for hardware debugger" H 9900 -10200 60  0001 C CNN "Purpose"
+	1    9900 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9550 2450 9450 2450
+Wire Wire Line
+	9450 2550 9550 2550
+Wire Wire Line
+	9550 2650 9500 2650
+Wire Wire Line
+	9450 2750 9550 2750
+Wire Wire Line
+	9550 2850 9450 2850
+Wire Wire Line
+	9450 2950 9550 2950
+Text Label 9450 2450 2    60   ~ 0
+NRST
+Text Label 9450 2550 2    60   ~ 0
+SWDIO
+$Comp
+L GND #PWR22
+U 1 1 514F40C1
+P 9500 2650
+F 0 "#PWR22" H 9500 2650 30  0001 C CNN
+F 1 "GND" H 9500 2720 30  0001 C CNN
+F 2 "" H 9500 2650 60  0000 C CNN
+F 3 "" H 9500 2650 60  0000 C CNN
+	1    9500 2650
+	0    1    1    0   
+$EndComp
+Text Label 9450 2750 2    60   ~ 0
+SWCLK
+Text Label 9450 2850 2    60   ~ 0
+USART1_TX
+Text Label 9450 2950 2    60   ~ 0
+USART1_RX
+Wire Wire Line
+	3900 1300 5050 1300
+Text Label 3900 1300 2    60   ~ 0
+NRST
+Text Label 8350 2350 0    60   ~ 0
+USART1_TX
+Text Label 8350 2450 0    60   ~ 0
+USART1_RX
+Text Label 8350 2750 0    60   ~ 0
+SWDIO
+Text Label 8350 2850 0    60   ~ 0
+SWCLK
+Wire Wire Line
+	8250 2850 8350 2850
+Wire Wire Line
+	8350 2750 8250 2750
+Wire Wire Line
+	8250 2450 8350 2450
+Wire Wire Line
+	8350 2350 8250 2350
+Text Label 2650 6050 2    60   ~ 0
+VPOS_CTRL
+Text Label 2650 6450 2    60   ~ 0
+VNEG_CTRL
+Text Label 4950 2100 2    60   ~ 0
+VPOS_CTRL
+Text Label 4950 2200 2    60   ~ 0
+VNEG_CTRL
+Text Label 2800 1950 3    60   ~ 0
+VCOM
+$Comp
+L R R6
+U 1 1 514F8CF2
+P 4050 1700
+F 0 "R6" V 4130 1700 40  0000 C CNN
+F 1 "10k" V 4057 1699 40  0000 C CNN
+F 2 "SM0402_r" V 3980 1700 30  0001 C CNN
+F 3 "~" H 4050 1700 30  0000 C CNN
+F 4 "BOOT0 pull-down" H -2800 -5150 60  0001 C CNN "Purpose"
+	1    4050 1700
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR11
+U 1 1 514F8D01
+P 4050 1950
+F 0 "#PWR11" H 4050 1950 30  0001 C CNN
+F 1 "GND" H 4050 2020 30  0001 C CNN
+F 2 "" H 4050 1950 60  0000 C CNN
+F 3 "" H 4050 1950 60  0000 C CNN
+	1    4050 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R5
+U 1 1 514F8DCB
+P 4050 1050
+F 0 "R5" V 4130 1050 40  0000 C CNN
+F 1 "10k" V 4057 1049 40  0000 C CNN
+F 2 "SM0402_r" V 3980 1050 30  0001 C CNN
+F 3 "~" H 4050 1050 30  0000 C CNN
+F 4 "NRST pull-up" H -6250 1050 60  0001 C CNN "Purpose"
+	1    4050 1050
+	-1   0    0    1   
+$EndComp
+$Comp
+L +3.3V #PWR10
+U 1 1 514F8DD1
+P 4050 800
+F 0 "#PWR10" H 4050 840 30  0001 C CNN
+F 1 "+3.3V" H 4050 900 30  0000 C CNN
+F 2 "" H 4050 800 60  0000 C CNN
+F 3 "" H 4050 800 60  0000 C CNN
+	1    4050 800 
+	1    0    0    -1  
+$EndComp
+Connection ~ 4050 1300
+Text Label 4250 3350 0    60   ~ 0
+D0
+Text Label 4250 3450 0    60   ~ 0
+D1
+Text Label 4250 3550 0    60   ~ 0
+D2
+Text Label 4250 3650 0    60   ~ 0
+D3
+Text Label 4250 3750 0    60   ~ 0
+D4
+Text Label 4250 3850 0    60   ~ 0
+D5
+Text Label 4250 3950 0    60   ~ 0
+D6
+Text Label 4250 4050 0    60   ~ 0
+D7
+Text Label 4250 3250 0    60   ~ 0
+SPH
+Text Label 4250 3050 0    60   ~ 0
+OE
+Text Label 4250 2950 0    60   ~ 0
+LE
+Text Label 4250 2850 0    60   ~ 0
+CL
+$Comp
+L C C7
+U 1 1 514F4521
+P 9150 1300
+F 0 "C7" H 9150 1200 40  0000 L CNN
+F 1 "100nF" H 9156 1385 40  0000 L CNN
+F 2 "SM0402" H 9188 1450 30  0001 C CNN
+F 3 "~" H 9150 1300 60  0000 C CNN
+F 4 "STM32L151 supply bypass" H 9150 -1100 60  0001 C CNN "Purpose"
+	1    9150 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C8
+U 1 1 514F456A
+P 9400 1300
+F 0 "C8" H 9400 1200 40  0000 L CNN
+F 1 "100nF" H 9406 1385 40  0000 L CNN
+F 2 "SM0402" H 9438 1450 30  0001 C CNN
+F 3 "~" H 9400 1300 60  0000 C CNN
+F 4 "STM32L151 supply bypass" H 9400 -1100 60  0001 C CNN "Purpose"
+	1    9400 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C9
+U 1 1 514F4570
+P 9650 1300
+F 0 "C9" H 9650 1200 40  0000 L CNN
+F 1 "100nF" H 9656 1385 40  0000 L CNN
+F 2 "SM0402" H 9688 1450 30  0001 C CNN
+F 3 "~" H 9650 1300 60  0000 C CNN
+F 4 "STM32L151 supply bypass" H 9650 -1100 60  0001 C CNN "Purpose"
+	1    9650 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C10
+U 1 1 514F4576
+P 9900 1300
+F 0 "C10" H 9900 1200 40  0000 L CNN
+F 1 "100nF" H 9906 1385 40  0000 L CNN
+F 2 "SM0402" H 9938 1450 30  0001 C CNN
+F 3 "~" H 9900 1300 60  0000 C CNN
+F 4 "STM32L151 supply bypass" H 9900 -1100 60  0001 C CNN "Purpose"
+	1    9900 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR21
+U 1 1 514F457E
+P 9150 1600
+F 0 "#PWR21" H 9150 1600 30  0001 C CNN
+F 1 "GND" H 9150 1670 30  0001 C CNN
+F 2 "" H 9150 1600 60  0000 C CNN
+F 3 "" H 9150 1600 60  0000 C CNN
+	1    9150 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9150 1600 9150 1500
+Wire Wire Line
+	9150 1500 9900 1500
+Connection ~ 9400 1500
+Connection ~ 9650 1500
+Connection ~ 9150 1500
+Wire Wire Line
+	9150 1100 9900 1100
+Connection ~ 9400 1100
+Connection ~ 9650 1100
+$Comp
+L +3.3V #PWR20
+U 1 1 514F4BFA
+P 9150 1050
+F 0 "#PWR20" H 9150 1090 30  0001 C CNN
+F 1 "+3.3V" H 9150 1150 30  0000 C CNN
+F 2 "" H 9150 1050 60  0000 C CNN
+F 3 "" H 9150 1050 60  0000 C CNN
+	1    9150 1050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9150 1050 9150 1100
+Connection ~ 9150 1100
+Wire Wire Line
+	3900 1450 5050 1450
+Text Label 3900 1450 2    60   ~ 0
+BOOT0
+$Comp
+L ED060SC4 U2
+U 1 1 514DF447
+P 2900 3400
+F 0 "U2" H 2100 2500 60  0000 C CNN
+F 1 "ED060SC4" H 2900 3350 60  0000 C CNN
+F 2 "FH26-39S-0.3SHW" H 2900 3400 60  0001 C CNN
+F 3 "~" H 2900 3400 60  0000 C CNN
+F 4 "Connector for E Ink screen" H -3100 -4900 60  0001 C CNN "Purpose"
+F 5 "1518805" H -3100 -4900 60  0001 C CNN "Farnell"
+	1    2900 3400
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1100 3450 1100 3350
+$Comp
+L GND #PWR12
+U 1 1 519E6931
+P 4100 3150
+F 0 "#PWR12" H 4100 3150 30  0001 C CNN
+F 1 "GND" H 4100 3220 30  0001 C CNN
+F 2 "" H 4100 3150 60  0000 C CNN
+F 3 "" H 4100 3150 60  0000 C CNN
+	1    4100 3150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR5
+U 1 1 519E6937
+P 1700 3050
+F 0 "#PWR5" H 1700 3050 30  0001 C CNN
+F 1 "GND" H 1700 3120 30  0001 C CNN
+F 2 "" H 1700 3050 60  0000 C CNN
+F 3 "" H 1700 3050 60  0000 C CNN
+	1    1700 3050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5050 3150 4400 3150
+Wire Wire Line
+	4400 3150 4400 3050
+Wire Wire Line
+	4400 3050 4100 3050
+Wire Wire Line
+	4100 2950 4500 2950
+Wire Wire Line
+	4500 2950 4500 3050
+Wire Wire Line
+	4500 3050 5050 3050
+Wire Wire Line
+	5050 2950 4600 2950
+Wire Wire Line
+	4600 2950 4600 2850
+Wire Wire Line
+	4600 2850 4100 2850
+Wire Wire Line
+	5050 2750 4950 2750
+Wire Wire Line
+	4950 2850 5050 2850
+Wire Wire Line
+	5050 2650 4950 2650
+Wire Wire Line
+	5050 2550 4950 2550
+Text Label 4950 2650 2    60   ~ 0
+GMODE
+Text Label 4950 2550 2    60   ~ 0
+EINK_VDD
+Connection ~ 2800 1250
+$Comp
+L CONN_1 TP1
+U 1 1 516AF60A
+P 2800 1100
+F 0 "TP1" H 2880 1100 40  0000 L CNN
+F 1 "VCOM" H 2800 1045 30  0001 C CNN
+F 2 "SIL-1" H 2800 1100 60  0001 C CNN
+F 3 "~" H 2800 1100 60  0000 C CNN
+F 4 "Testpoint for verifying voltages" H -1400 -3100 60  0001 C CNN "Purpose"
+	1    2800 1100
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	2150 1650 2150 2150
+Wire Wire Line
+	2150 850  2150 600 
+Text Label 2150 600  3    60   ~ 0
+VPOS
+Wire Wire Line
+	2150 1900 1600 1900
+Connection ~ 2150 1900
+$Comp
+L GND #PWR6
+U 1 1 519E7972
+P 2450 2300
+F 0 "#PWR6" H 2450 2300 30  0001 C CNN
+F 1 "GND" H 2450 2370 30  0001 C CNN
+F 2 "" H 2450 2300 60  0000 C CNN
+F 3 "" H 2450 2300 60  0000 C CNN
+	1    2450 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 2300 2450 2250
+Wire Wire Line
+	2450 2250 2600 2250
+Connection ~ 4050 1450
+$Comp
+L STM32L151C8 U6
+U 1 1 514DE935
+P 6550 2700
+F 0 "U6" H 5250 1050 60  0000 C CNN
+F 1 "STM32L151C8" H 7800 4400 60  0000 C CNN
+F 2 "LQFP48" H 7900 4200 40  0001 C CIN
+F 3 "~" H 6550 2700 60  0000 C CNN
+F 4 "Microcontroller to control the whole device" H 6550 -4200 60  0001 C CNN "Purpose"
+F 5 "2060923" H 6550 -4200 60  0001 C CNN "Farnell"
+	1    6550 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 2100 5050 2100
+Wire Wire Line
+	4950 2200 5050 2200
+$Comp
+L LT3463 U3
+U 1 1 514EB801
+P 3700 6250
+F 0 "U3" H 3700 6100 60  0000 C CNN
+F 1 "LT3463" H 3650 6250 60  0000 C CNN
+F 2 "DFN10" H 3900 6350 60  0001 C CNN
+F 3 "" H 3900 6350 60  0000 C CNN
+F 4 "SMPS controller to generate E Ink voltages" H 3700 -1550 60  0001 C CNN "Purpose"
+F 5 "1663556" H 3700 -1550 60  0001 C CNN "Farnell"
+	1    3700 6250
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR4
+U 1 1 514EB86A
+P 1650 6700
+F 0 "#PWR4" H 1650 6700 30  0001 C CNN
+F 1 "GND" H 1650 6770 30  0001 C CNN
+F 2 "" H 1650 6700 60  0000 C CNN
+F 3 "" H 1650 6700 60  0000 C CNN
+	1    1650 6700
+	1    0    0    -1  
+$EndComp
+$Comp
+L INDUCTOR L1
+U 1 1 514EB88B
+P 3400 5250
+F 0 "L1" V 3350 5250 40  0000 C CNN
+F 1 "10µH" V 3500 5250 40  0000 C CNN
+F 2 "SELF-WE-TPC_M" H 3400 5250 60  0001 C CNN
+F 3 "~" H 3400 5250 60  0000 C CNN
+F 4 "Positive side SMPS inductor" H -4900 5250 60  0001 C CNN "Purpose"
+F 5 "1782801" H -4900 5250 60  0001 C CNN "Farnell"
+	1    3400 5250
+	0    1    -1   0   
+$EndComp
+$Comp
+L C C1
+U 1 1 514EB8BF
+P 1650 6500
+F 0 "C1" H 1650 6400 40  0000 L CNN
+F 1 "4.7µF" H 1656 6585 40  0000 L CNN
+F 2 "SM0805" H 1688 6650 30  0001 C CNN
+F 3 "~" H 1650 6500 60  0000 C CNN
+F 4 "+BATT bypass for switcher" H 1650 1600 60  0001 C CNN "Purpose"
+F 5 "1759431" H 1650 1600 60  0001 C CNN "Farnell"
+	1    1650 6500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 5250 5150 5250
+$Comp
+L GND #PWR13
+U 1 1 514EB9C4
+P 4550 5650
+F 0 "#PWR13" H 4550 5650 30  0001 C CNN
+F 1 "GND" H 4550 5720 30  0001 C CNN
+F 2 "" H 4550 5650 60  0000 C CNN
+F 3 "" H 4550 5650 60  0000 C CNN
+	1    4550 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R9
+U 1 1 514EB9CC
+P 4950 5800
+F 0 "R9" V 5030 5800 40  0000 C CNN
+F 1 "200k" V 4957 5799 40  0000 C CNN
+F 2 "SM0402_r" V 4880 5800 30  0001 C CNN
+F 3 "~" H 4950 5800 30  0000 C CNN
+F 4 "Positive side SMPS feedback" H 4950 800 60  0001 C CNN "Purpose"
+	1    4950 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R10
+U 1 1 514EB9D9
+P 4950 6300
+F 0 "R10" V 5030 6300 40  0000 C CNN
+F 1 "12k" V 4957 6299 40  0000 C CNN
+F 2 "SM0402_r" V 4880 6300 30  0001 C CNN
+F 3 "~" H 4950 6300 30  0000 C CNN
+F 4 "Positive side SMPS feedback" H 4950 300 60  0001 C CNN "Purpose"
+	1    4950 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR14
+U 1 1 514EB9DF
+P 4950 6550
+F 0 "#PWR14" H 4950 6550 30  0001 C CNN
+F 1 "GND" H 4950 6620 30  0001 C CNN
+F 2 "" H 4950 6550 60  0000 C CNN
+F 3 "" H 4950 6550 60  0000 C CNN
+	1    4950 6550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 6050 4950 6050
+Connection ~ 4950 6050
+Connection ~ 4950 5550
+Wire Wire Line
+	2650 6450 3000 6450
+Wire Wire Line
+	2650 6050 3000 6050
+$Comp
+L GND #PWR9
+U 1 1 514EBA06
+P 3400 7050
+F 0 "#PWR9" H 3400 7050 30  0001 C CNN
+F 1 "GND" H 3400 7120 30  0001 C CNN
+F 2 "" H 3400 7050 60  0000 C CNN
+F 3 "" H 3400 7050 60  0000 C CNN
+	1    3400 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L INDUCTOR L2
+U 1 1 514EBA0C
+P 3400 7300
+F 0 "L2" V 3350 7300 40  0000 C CNN
+F 1 "10µH" V 3500 7300 40  0000 C CNN
+F 2 "SELF-WE-TPC_M" H 3400 7300 60  0001 C CNN
+F 3 "~" H 3400 7300 60  0000 C CNN
+F 4 "Negative side SMPS inductor" H -5400 -1500 60  0001 C CNN "Purpose"
+F 5 "1782801" H -5400 -1500 60  0001 C CNN "Farnell"
+	1    3400 7300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C2
+U 1 1 514EBA35
+P 3900 7300
+F 0 "C2" V 3750 7300 40  0000 L CNN
+F 1 "1µF" V 4050 7250 40  0000 L CNN
+F 2 "SM0805" H 3938 7450 30  0001 C CNN
+F 3 "~" H 3900 7300 60  0000 C CNN
+F 4 "Negative side SMPS capacitor" H -5400 -2000 60  0001 C CNN "Purpose"
+F 5 "1845750" H -5400 -2000 60  0001 C CNN "Farnell"
+	1    3900 7300
+	0    -1   -1   0   
+$EndComp
+Connection ~ 3700 7300
+Wire Wire Line
+	4100 7300 4100 7050
+Wire Wire Line
+	4100 7050 4000 7050
+$Comp
+L DIODESCH D1
+U 1 1 514EBB46
+P 4300 7300
+F 0 "D1" H 4300 7200 40  0000 C CNN
+F 1 "DIODESCH" H 4300 7400 40  0001 C CNN
+F 2 "sod323" H 4300 7300 60  0001 C CNN
+F 3 "~" H 4300 7300 60  0000 C CNN
+F 4 "Negative side SMPS diode" H -5200 7300 60  0001 C CNN "Purpose"
+F 5 "2295711" H -5200 7300 60  0001 C CNN "Farnell"
+	1    4300 7300
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C6
+U 1 1 514EBB53
+P 6050 6800
+F 0 "C6" H 6050 6700 40  0000 L CNN
+F 1 "4.7µF" H 6056 6885 40  0000 L CNN
+F 2 "SM0805" H 6088 6950 30  0001 C CNN
+F 3 "~" H 6050 6800 60  0000 C CNN
+F 4 "Bypass for -15V supply" H 6050 -2700 60  0001 C CNN "Purpose"
+F 5 "1759431" H 6050 -2700 60  0001 C CNN "Farnell"
+	1    6050 6800
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR15
+U 1 1 514EBB59
+P 4950 6900
+F 0 "#PWR15" H 4950 6900 30  0001 C CNN
+F 1 "GND" H 4950 6970 30  0001 C CNN
+F 2 "" H 4950 6900 60  0000 C CNN
+F 3 "" H 4950 6900 60  0000 C CNN
+	1    4950 6900
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4500 7300 5350 7300
+Connection ~ 4650 7300
+$Comp
+L R R8
+U 1 1 514EBB86
+P 4650 7050
+F 0 "R8" V 4730 7050 40  0000 C CNN
+F 1 "160k" V 4657 7049 40  0000 C CNN
+F 2 "SM0402_r" V 4580 7050 30  0001 C CNN
+F 3 "~" H 4650 7050 30  0000 C CNN
+F 4 "Negative side SMPS feedback" H 4650 -2350 60  0001 C CNN "Purpose"
+	1    4650 7050
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R7
+U 1 1 514EBB8C
+P 4650 6550
+F 0 "R7" V 4730 6550 40  0000 C CNN
+F 1 "10k" V 4657 6549 40  0000 C CNN
+F 2 "SM0402_r" V 4580 6550 30  0001 C CNN
+F 3 "~" H 4650 6550 30  0000 C CNN
+F 4 "Negative side SMPS feedback" H 4650 -1850 60  0001 C CNN "Purpose"
+	1    4650 6550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 6250 4650 6250
+Wire Wire Line
+	4650 6250 4650 6300
+Wire Wire Line
+	4650 6800 4400 6800
+Wire Wire Line
+	4400 6800 4400 6450
+Connection ~ 4650 6800
+$Comp
+L R R3
+U 1 1 514EBC96
+P 2800 6750
+F 0 "R3" V 2880 6750 40  0000 C CNN
+F 1 "10k" V 2807 6749 40  0000 C CNN
+F 2 "SM0402_r" V 2730 6750 30  0001 C CNN
+F 3 "~" H 2800 6750 30  0000 C CNN
+F 4 "Pull-down for SHDN_POS" H 2800 -2250 60  0001 C CNN "Purpose"
+	1    2800 6750
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R4
+U 1 1 514EBC9C
+P 3000 6750
+F 0 "R4" V 3080 6750 40  0000 C CNN
+F 1 "10k" V 3007 6749 40  0000 C CNN
+F 2 "SM0402_r" V 2930 6750 30  0001 C CNN
+F 3 "~" H 3000 6750 30  0000 C CNN
+F 4 "Pull-down for SHDN_NEG" H 3000 -2250 60  0001 C CNN "Purpose"
+	1    3000 6750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 6500 2800 6050
+Connection ~ 2800 6050
+Wire Wire Line
+	3000 6450 3000 6500
+Connection ~ 3000 6450
+$Comp
+L GND #PWR7
+U 1 1 514EBCE3
+P 2800 7050
+F 0 "#PWR7" H 2800 7050 30  0001 C CNN
+F 1 "GND" H 2800 7120 30  0001 C CNN
+F 2 "" H 2800 7050 60  0000 C CNN
+F 3 "" H 2800 7050 60  0000 C CNN
+	1    2800 7050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 7050 2800 7000
+Wire Wire Line
+	2800 7000 3000 7000
+Connection ~ 2800 7000
+Connection ~ 4950 7300
+Connection ~ 4100 7300
+$Comp
+L C C3
+U 1 1 515316E8
+P 4550 5450
+F 0 "C3" H 4550 5350 40  0000 L CNN
+F 1 "4.7µF" H 4556 5535 40  0000 L CNN
+F 2 "SM0805" H 4588 5600 30  0001 C CNN
+F 3 "~" H 4550 5450 60  0000 C CNN
+F 4 "Bypass for +22V supply" H 4550 1450 60  0001 C CNN "Purpose"
+F 5 "1759431" H 4550 1450 60  0001 C CNN "Farnell"
+	1    4550 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C4
+U 1 1 515317A9
+P 4950 7100
+F 0 "C4" H 4950 7000 40  0000 L CNN
+F 1 "4.7µF" H 4956 7185 40  0000 L CNN
+F 2 "SM0805" H 4988 7250 30  0001 C CNN
+F 3 "~" H 4950 7100 60  0000 C CNN
+F 4 "Bypass for -20V supply" H 4950 -3300 60  0001 C CNN "Purpose"
+F 5 "1759431" H 4950 -3300 60  0001 C CNN "Farnell"
+	1    4950 7100
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 TP2
+U 1 1 515ADB0E
+P 4950 5100
+F 0 "TP2" H 5030 5100 40  0000 L CNN
+F 1 "+22V" H 4950 5045 30  0001 C CNN
+F 2 "SIL-1" H 4950 5100 60  0001 C CNN
+F 3 "~" H 4950 5100 60  0000 C CNN
+F 4 "Testpoint for verifying voltages" H -3900 -3750 60  0001 C CNN "Purpose"
+	1    4950 5100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_1 TP5
+U 1 1 515ADB2C
+P 6050 5400
+F 0 "TP5" H 6130 5400 40  0000 L CNN
+F 1 "+15V" H 6050 5345 30  0001 C CNN
+F 2 "SIL-1" H 6050 5400 60  0001 C CNN
+F 3 "~" H 6050 5400 60  0000 C CNN
+F 4 "Testpoint for verifying voltages" H -700 -1350 60  0001 C CNN "Purpose"
+	1    6050 5400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_1 TP6
+U 1 1 515ADB4A
+P 6050 7150
+F 0 "TP6" H 6130 7150 40  0000 L CNN
+F 1 "-15V" H 6050 7095 30  0001 C CNN
+F 2 "SIL-1" H 6050 7150 60  0001 C CNN
+F 3 "~" H 6050 7150 60  0000 C CNN
+F 4 "Testpoint for verifying voltages" H 6050 7150 60  0001 C CNN "Purpose"
+	1    6050 7150
+	0    1    1    0   
+$EndComp
+$Comp
+L CONN_1 TP3
+U 1 1 515ADB68
+P 5200 7450
+F 0 "TP3" H 5280 7450 40  0000 L CNN
+F 1 "-20V" H 5200 7395 30  0001 C CNN
+F 2 "SIL-1" H 5200 7450 60  0001 C CNN
+F 3 "~" H 5200 7450 60  0000 C CNN
+F 4 "Testpoint for verifying voltages" H 3400 9250 60  0001 C CNN "Purpose"
+	1    5200 7450
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR16
+U 1 1 516B15FB
+P 5500 6150
+F 0 "#PWR16" H 5500 6150 30  0001 C CNN
+F 1 "GND" H 5500 6220 30  0001 C CNN
+F 2 "" H 5500 6150 60  0000 C CNN
+F 3 "" H 5500 6150 60  0000 C CNN
+	1    5500 6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 5550 4950 5250
+Wire Wire Line
+	6050 5550 6600 5550
+Connection ~ 6050 5550
+$Comp
+L LM78LXXACDG U4
+U 1 1 516B193B
+P 5650 5600
+F 0 "U4" H 5450 5800 40  0000 C CNN
+F 1 "LM78L15ACDG" H 5550 5800 40  0000 L CNN
+F 2 "SO8E" H 5650 5500 30  0001 C CIN
+F 3 "~" H 5650 5600 60  0000 C CNN
+F 4 "Regulator for +15V supply" H 5650 400 60  0001 C CNN "Purpose"
+F 5 "1211121" H 5650 400 60  0001 C CNN "Farnell"
+	1    5650 5600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 5850 5500 6150
+Wire Wire Line
+	5500 6050 6350 6050
+Connection ~ 5500 6050
+Wire Wire Line
+	5600 5850 5600 6050
+Connection ~ 5600 6050
+Wire Wire Line
+	5700 5850 5700 6050
+Connection ~ 5700 6050
+Wire Wire Line
+	5800 6050 5800 5850
+Connection ~ 5800 6050
+$Comp
+L LM79LXXACDG U5
+U 1 1 516B1A4E
+P 5650 6950
+F 0 "U5" H 5450 7150 40  0000 C CNN
+F 1 "LM79L15ACDG" H 5550 7150 40  0000 L CNN
+F 2 "SO8E" H 5650 6850 30  0001 C CIN
+F 3 "~" H 5650 6950 60  0000 C CNN
+F 4 "Regulator for -15V supply" H 5650 6950 60  0001 C CNN "Purpose"
+F 5 "1211126" H 5650 6950 60  0001 C CNN "Farnell"
+	1    5650 6950
+	1    0    0    1   
+$EndComp
+$Comp
+L GND #PWR17
+U 1 1 516B1A7E
+P 5650 6350
+F 0 "#PWR17" H 5650 6350 30  0001 C CNN
+F 1 "GND" H 5650 6420 30  0001 C CNN
+F 2 "" H 5650 6350 60  0000 C CNN
+F 3 "" H 5650 6350 60  0000 C CNN
+	1    5650 6350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6050 7000 6600 7000
+Connection ~ 6050 7000
+Wire Wire Line
+	5650 6350 5650 6700
+Wire Wire Line
+	5250 6900 5200 6900
+Wire Wire Line
+	5200 6900 5200 7300
+Connection ~ 5200 7300
+Wire Wire Line
+	5200 6950 5250 6950
+Connection ~ 5200 6950
+Wire Wire Line
+	5250 7000 5200 7000
+Connection ~ 5200 7000
+Wire Wire Line
+	5200 7050 5250 7050
+Connection ~ 5200 7050
+$Comp
+L R R11
+U 1 1 516B1C27
+P 6300 6750
+F 0 "R11" V 6380 6750 40  0000 C CNN
+F 1 "10k" V 6307 6749 40  0000 C CNN
+F 2 "SM0402_r" V 6230 6750 30  0001 C CNN
+F 3 "~" H 6300 6750 30  0000 C CNN
+F 4 "Minimum load for LM79L" H 6300 -1650 60  0001 C CNN "Purpose"
+	1    6300 6750
+	1    0    0    -1  
+$EndComp
+Connection ~ 6300 7000
+Wire Wire Line
+	5650 6500 6300 6500
+Connection ~ 5650 6500
+Wire Wire Line
+	6050 6600 6050 6500
+Connection ~ 6050 6500
+$Comp
+L R R12
+U 1 1 516B1CEF
+P 6350 5800
+F 0 "R12" V 6430 5800 40  0000 C CNN
+F 1 "10k" V 6357 5799 40  0000 C CNN
+F 2 "SM0402_r" V 6280 5800 30  0001 C CNN
+F 3 "~" H 6350 5800 30  0000 C CNN
+F 4 "Minimum load for LM78L" H 6350 -2600 60  0001 C CNN "Purpose"
+	1    6350 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C5
+U 1 1 514EB9BE
+P 6050 5750
+F 0 "C5" H 6050 5650 40  0000 L CNN
+F 1 "4.7µF" H 6056 5835 40  0000 L CNN
+F 2 "SM0805" H 6088 5900 30  0001 C CNN
+F 3 "~" H 6050 5750 60  0000 C CNN
+F 4 "Bypass for +15V supply" H 6050 850 60  0001 C CNN "Purpose"
+F 5 "1759431" H 6050 850 60  0001 C CNN "Farnell"
+	1    6050 5750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 5950 6050 6050
+Connection ~ 6050 6050
+Connection ~ 6350 5550
+Wire Wire Line
+	3700 7050 3700 7300
+Text Notes 6600 5650 0    60   ~ 0
++15V
+Text Notes 6600 7100 0    60   ~ 0
+-15V
+Text Notes 5350 7400 0    60   ~ 0
+-20V
+Text Notes 5150 5350 0    60   ~ 0
++22V
+Connection ~ 4950 5250
+Wire Wire Line
+	4950 5550 5250 5550
+Connection ~ 4550 5250
+Wire Wire Line
+	4000 5250 4000 5350
+$Comp
+L MOSFET_P Q1
+U 1 1 519E97DE
+P 1550 6100
+F 0 "Q1" H 1400 6250 60  0000 R CNN
+F 1 "IRLML6402" H 1400 6350 60  0000 R CNN
+F 2 "~" H 1550 6100 60  0000 C CNN
+F 3 "~" H 1550 6100 60  0000 C CNN
+	1    1550 6100
+	1    0    0    1   
+$EndComp
+$Comp
+L +BATT #PWR3
+U 1 1 519E987A
+P 1650 5450
+F 0 "#PWR3" H 1650 5400 20  0001 C CNN
+F 1 "+BATT" H 1650 5550 30  0000 C CNN
+F 2 "" H 1650 5450 60  0000 C CNN
+F 3 "" H 1650 5450 60  0000 C CNN
+	1    1650 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 5350 3700 5250
+Wire Wire Line
+	1950 5350 3400 5350
+Wire Wire Line
+	1950 5350 1950 7300
+Wire Wire Line
+	1950 6300 1650 6300
+Wire Wire Line
+	3100 5350 3100 5250
+Connection ~ 3100 5350
+Connection ~ 1650 6300
+Wire Wire Line
+	1950 7300 3100 7300
+Connection ~ 1950 6300
+Text Label 1950 5350 0    60   ~ 0
+SMPS_V+
+Wire Wire Line
+	1350 6100 1200 6100
+Text Label 1200 6100 2    60   ~ 0
+SMPS_CTRL
+$Comp
+L CONN_1 TP4
+U 1 1 519E9CDA
+P 5350 6050
+F 0 "TP4" H 5430 6050 40  0000 L CNN
+F 1 "+22V" H 5350 5995 30  0001 C CNN
+F 2 "SIL-1" H 5350 6050 60  0001 C CNN
+F 3 "~" H 5350 6050 60  0000 C CNN
+F 4 "Testpoint for verifying voltages" H -3500 -2800 60  0001 C CNN "Purpose"
+	1    5350 6050
+	-1   0    0    1   
+$EndComp
+Text Label 4950 2000 2    60   ~ 0
+SMPS_CTRL
+Wire Wire Line
+	4950 2000 5050 2000
+Text Notes 7200 5500 0    60   ~ 0
+This schematic assumes Li-ion battery (3.5 - 4.2 V) as BATT+.\nThe lower portion of the schematic deals with the high voltage generation,\nwhile the upper portion connects the display to a microcontroller.\nBasically any microcontroller could be used, as long as it has 3.3 V IO pins.
+$Comp
+L R R1
+U 1 1 519E9DAF
+P 1350 5850
+F 0 "R1" V 1430 5850 40  0000 C CNN
+F 1 "10k" V 1357 5849 40  0000 C CNN
+F 2 "SM0402_r" V 1280 5850 30  0001 C CNN
+F 3 "~" H 1350 5850 30  0000 C CNN
+F 4 "Pull-down for SHDN_POS" H 1350 -3150 60  0001 C CNN "Purpose"
+	1    1350 5850
+	1    0    0    -1  
+$EndComp
+Connection ~ 1350 6100
+Wire Wire Line
+	1650 5900 1650 5450
+Wire Wire Line
+	1350 5600 1650 5600
+Connection ~ 1650 5600
+$EndSCHEMATC

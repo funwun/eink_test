@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<project>                                  
+  <executable name="dist/default/production/eink_test_fill.X.production.elf">                 
+    <memory name="program">                 
+      <units>bytes</units>                 
+      <length>73216</length>                 
+      <used>13136</used>                     
+      <free>60080</free>                     
+    </memory>                              
+    <memory name="data">              
+      <units>bytes</units>                 
+      <length>16384</length>                 
+      <used>108</used>                     
+      <free>16276</free>                     
+    </memory>                              
+  </executable>                            
+</project>                                 

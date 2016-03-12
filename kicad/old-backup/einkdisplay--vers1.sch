@@ -1,0 +1,1929 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:std_components
+LIBS:pics
+LIBS:IS61LV256AL
+LIBS:ics
+LIBS:einkdisplay-cache
+EELAYER 25 0
+EELAYER END
+$Descr B 17000 11000
+encoding utf-8
+Sheet 1 1
+Title "E-ink schematic"
+Date "10 November 2015"
+Rev "1"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Label 6750 2800 0    60   ~ 0
+VPOS
+Text Label 6750 4250 0    60   ~ 0
+VNEG
+Text Label 5500 4550 0    60   ~ 0
+GVEE
+Text Label 5300 2500 0    60   ~ 0
+GVDD
+$Comp
+L LM358 U1
+U 1 1 514EF6E7
+P 8300 3050
+F 0 "U1" H 8250 2850 60  0000 L CNN
+F 1 "LM358" H 8250 3300 60  0000 L CNN
+F 2 "SO8E" H 8300 3050 60  0001 C CNN
+F 3 "" H 8300 3050 60  0000 C CNN
+F 4 "Amplifier for VBORDER and VCOM" H 1400 150 60  0001 C CNN "Purpose"
+F 5 "1467656" H 1400 150 60  0001 C CNN "Farnell"
+	1    8300 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L POT RV1
+U 1 1 514EFD03
+P 7600 2950
+F 0 "RV1" H 7600 2850 50  0000 C CNN
+F 1 "10k" H 7600 2950 50  0000 C CNN
+F 2 "BOURNS_SMD_TRIMMER" H 7600 2950 60  0001 C CNN
+F 3 "~" H 7600 2950 60  0000 C CNN
+F 4 "VCOM trimmer" H 2150 -2500 60  0001 C CNN "Purpose"
+F 5 "1360937" H 2150 -2500 60  0001 C CNN "Farnell"
+	1    7600 2950
+	0    1    -1   0   
+$EndComp
+$Comp
+L R-RESCUE-eink_example R2
+U 1 1 514EFEC9
+P 7600 3450
+F 0 "R2" V 7680 3450 40  0000 C CNN
+F 1 "47k" V 7607 3449 40  0000 C CNN
+F 2 "SM0402_r" V 7530 3450 30  0001 C CNN
+F 3 "~" H 7600 3450 30  0000 C CNN
+F 4 "VCOM voltage divider" V 7600 -250 60  0001 C CNN "Purpose"
+	1    7600 3450
+	-1   0    0    -1  
+$EndComp
+Text Label 8200 4000 1    60   ~ 0
+VNEG
+$Comp
+L GND-RESCUE-eink_example #PWR25
+U 1 1 514F0048
+P 7600 2650
+F 0 "#PWR25" H 7600 2650 30  0001 C CNN
+F 1 "GND" H 7600 2720 30  0001 C CNN
+F 2 "" H 7600 2650 60  0000 C CNN
+F 3 "" H 7600 2650 60  0000 C CNN
+	1    7600 2650
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	7800 3150 7800 3500
+Wire Wire Line
+	7800 3500 9400 3500
+Wire Wire Line
+	8900 3500 8900 3050
+Wire Wire Line
+	8900 3050 8800 3050
+Connection ~ 8900 3500
+Wire Wire Line
+	7600 2650 7600 2700
+Text Label 2800 3300 2    60   ~ 0
+VPOS_CTRL
+Text Label 2800 3700 2    60   ~ 0
+VNEG_CTRL
+$Comp
+L C-RESCUE-eink_example C11
+U 1 1 514F4521
+P 7900 9400
+F 0 "C11" V 8000 9200 40  0000 L CNN
+F 1 "100nF" V 8000 9500 40  0000 L CNN
+F 2 "SM0402" H 7938 9550 30  0001 C CNN
+F 3 "~" H 7900 9400 60  0000 C CNN
+F 4 "STM32L151 supply bypass" H 7900 7000 60  0001 C CNN "Purpose"
+	1    7900 9400
+	0    1    1    0   
+$EndComp
+Connection ~ 8900 3050
+$Comp
+L CONN_1 TP1
+U 1 1 516AF60A
+P 8900 2900
+F 0 "TP1" H 8980 2900 40  0000 L CNN
+F 1 "VCOM" H 8900 2845 30  0001 C CNN
+F 2 "SIL-1" H 8900 2900 60  0001 C CNN
+F 3 "~" H 8900 2900 60  0000 C CNN
+F 4 "Testpoint for verifying voltages" H 4700 -1300 60  0001 C CNN "Purpose"
+	1    8900 2900
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	8200 3450 8200 4000
+Wire Wire Line
+	8200 2650 8200 2400
+Text Label 8200 2400 3    60   ~ 0
+VPOS
+Wire Wire Line
+	7600 3700 8200 3700
+Connection ~ 8200 3700
+$Comp
+L LT3463 U3
+U 1 1 514EB801
+P 3850 3500
+F 0 "U3" H 3850 3350 60  0000 C CNN
+F 1 "LT3463" H 3800 3500 60  0000 C CNN
+F 2 "DFN10" H 4050 3600 60  0001 C CNN
+F 3 "" H 4050 3600 60  0000 C CNN
+F 4 "SMPS controller to generate E Ink voltages" H 3850 -4300 60  0001 C CNN "Purpose"
+F 5 "1663556" H 3850 -4300 60  0001 C CNN "Farnell"
+	1    3850 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND-RESCUE-eink_example #PWR4
+U 1 1 514EB86A
+P 1800 3950
+F 0 "#PWR4" H 1800 3950 30  0001 C CNN
+F 1 "GND" H 1800 4020 30  0001 C CNN
+F 2 "" H 1800 3950 60  0000 C CNN
+F 3 "" H 1800 3950 60  0000 C CNN
+	1    1800 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L INDUCTOR L1
+U 1 1 514EB88B
+P 3550 2500
+F 0 "L1" V 3500 2500 40  0000 C CNN
+F 1 "10µH" V 3650 2500 40  0000 C CNN
+F 2 "SELF-WE-TPC_M" H 3550 2500 60  0001 C CNN
+F 3 "~" H 3550 2500 60  0000 C CNN
+F 4 "Positive side SMPS inductor" H -4750 2500 60  0001 C CNN "Purpose"
+F 5 "1782801" H -4750 2500 60  0001 C CNN "Farnell"
+	1    3550 2500
+	0    1    -1   0   
+$EndComp
+$Comp
+L C-RESCUE-eink_example C1
+U 1 1 514EB8BF
+P 1800 3750
+F 0 "C1" H 1800 3650 40  0000 L CNN
+F 1 "4.7µF" H 1806 3835 40  0000 L CNN
+F 2 "SM0805" H 1838 3900 30  0001 C CNN
+F 3 "~" H 1800 3750 60  0000 C CNN
+F 4 "+BATT bypass for switcher" H 1800 -1150 60  0001 C CNN "Purpose"
+F 5 "1759431" H 1800 -1150 60  0001 C CNN "Farnell"
+	1    1800 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 2500 5300 2500
+$Comp
+L GND-RESCUE-eink_example #PWR11
+U 1 1 514EB9C4
+P 4700 2900
+F 0 "#PWR11" H 4700 2900 30  0001 C CNN
+F 1 "GND" H 4700 2970 30  0001 C CNN
+F 2 "" H 4700 2900 60  0000 C CNN
+F 3 "" H 4700 2900 60  0000 C CNN
+	1    4700 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L R-RESCUE-eink_example R9
+U 1 1 514EB9CC
+P 5100 3050
+F 0 "R9" V 5180 3050 40  0000 C CNN
+F 1 "200k" V 5107 3049 40  0000 C CNN
+F 2 "SM0402_r" V 5030 3050 30  0001 C CNN
+F 3 "~" H 5100 3050 30  0000 C CNN
+F 4 "Positive side SMPS feedback" H 5100 -1950 60  0001 C CNN "Purpose"
+	1    5100 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L R-RESCUE-eink_example R10
+U 1 1 514EB9D9
+P 5100 3550
+F 0 "R10" V 5180 3550 40  0000 C CNN
+F 1 "12k" V 5107 3549 40  0000 C CNN
+F 2 "SM0402_r" V 5030 3550 30  0001 C CNN
+F 3 "~" H 5100 3550 30  0000 C CNN
+F 4 "Positive side SMPS feedback" H 5100 -2450 60  0001 C CNN "Purpose"
+	1    5100 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND-RESCUE-eink_example #PWR12
+U 1 1 514EB9DF
+P 5100 3800
+F 0 "#PWR12" H 5100 3800 30  0001 C CNN
+F 1 "GND" H 5100 3870 30  0001 C CNN
+F 2 "" H 5100 3800 60  0000 C CNN
+F 3 "" H 5100 3800 60  0000 C CNN
+	1    5100 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 3300 5100 3300
+Connection ~ 5100 3300
+Connection ~ 5100 2800
+Wire Wire Line
+	2800 3700 3150 3700
+Wire Wire Line
+	2800 3300 3150 3300
+$Comp
+L GND-RESCUE-eink_example #PWR7
+U 1 1 514EBA06
+P 3550 4300
+F 0 "#PWR7" H 3550 4300 30  0001 C CNN
+F 1 "GND" H 3550 4370 30  0001 C CNN
+F 2 "" H 3550 4300 60  0000 C CNN
+F 3 "" H 3550 4300 60  0000 C CNN
+	1    3550 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L INDUCTOR L2
+U 1 1 514EBA0C
+P 3550 4550
+F 0 "L2" V 3500 4550 40  0000 C CNN
+F 1 "10µH" V 3650 4550 40  0000 C CNN
+F 2 "SELF-WE-TPC_M" H 3550 4550 60  0001 C CNN
+F 3 "~" H 3550 4550 60  0000 C CNN
+F 4 "Negative side SMPS inductor" H -5250 -4250 60  0001 C CNN "Purpose"
+F 5 "1782801" H -5250 -4250 60  0001 C CNN "Farnell"
+	1    3550 4550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C-RESCUE-eink_example C2
+U 1 1 514EBA35
+P 4050 4550
+F 0 "C2" V 3900 4550 40  0000 L CNN
+F 1 "1µF" V 4200 4500 40  0000 L CNN
+F 2 "SM0805" H 4088 4700 30  0001 C CNN
+F 3 "~" H 4050 4550 60  0000 C CNN
+F 4 "Negative side SMPS capacitor" H -5250 -4750 60  0001 C CNN "Purpose"
+F 5 "1845750" H -5250 -4750 60  0001 C CNN "Farnell"
+	1    4050 4550
+	0    -1   -1   0   
+$EndComp
+Connection ~ 3850 4550
+Wire Wire Line
+	4250 4550 4250 4300
+Wire Wire Line
+	4250 4300 4150 4300
+$Comp
+L DIODESCH D1
+U 1 1 514EBB46
+P 4450 4550
+F 0 "D1" H 4450 4450 40  0000 C CNN
+F 1 "DIODESCH" H 4450 4650 40  0001 C CNN
+F 2 "sod323" H 4450 4550 60  0001 C CNN
+F 3 "~" H 4450 4550 60  0000 C CNN
+F 4 "Negative side SMPS diode" H -5050 4550 60  0001 C CNN "Purpose"
+F 5 "2295711" H -5050 4550 60  0001 C CNN "Farnell"
+	1    4450 4550
+	-1   0    0    1   
+$EndComp
+$Comp
+L C-RESCUE-eink_example C6
+U 1 1 514EBB53
+P 6200 4050
+F 0 "C6" H 6200 3950 40  0000 L CNN
+F 1 "4.7µF" H 6206 4135 40  0000 L CNN
+F 2 "SM0805" H 6238 4200 30  0001 C CNN
+F 3 "~" H 6200 4050 60  0000 C CNN
+F 4 "Bypass for -15V supply" H 6200 -5450 60  0001 C CNN "Purpose"
+F 5 "1759431" H 6200 -5450 60  0001 C CNN "Farnell"
+	1    6200 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND-RESCUE-eink_example #PWR13
+U 1 1 514EBB59
+P 5100 4150
+F 0 "#PWR13" H 5100 4150 30  0001 C CNN
+F 1 "GND" H 5100 4220 30  0001 C CNN
+F 2 "" H 5100 4150 60  0000 C CNN
+F 3 "" H 5100 4150 60  0000 C CNN
+	1    5100 4150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	4650 4550 5500 4550
+Connection ~ 4800 4550
+$Comp
+L R-RESCUE-eink_example R8
+U 1 1 514EBB86
+P 4800 4300
+F 0 "R8" V 4880 4300 40  0000 C CNN
+F 1 "160k" V 4807 4299 40  0000 C CNN
+F 2 "SM0402_r" V 4730 4300 30  0001 C CNN
+F 3 "~" H 4800 4300 30  0000 C CNN
+F 4 "Negative side SMPS feedback" H 4800 -5100 60  0001 C CNN "Purpose"
+	1    4800 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L R-RESCUE-eink_example R7
+U 1 1 514EBB8C
+P 4800 3800
+F 0 "R7" V 4880 3800 40  0000 C CNN
+F 1 "10k" V 4807 3799 40  0000 C CNN
+F 2 "SM0402_r" V 4730 3800 30  0001 C CNN
+F 3 "~" H 4800 3800 30  0000 C CNN
+F 4 "Negative side SMPS feedback" H 4800 -4600 60  0001 C CNN "Purpose"
+	1    4800 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 3500 4800 3500
+Wire Wire Line
+	4800 3500 4800 3550
+Wire Wire Line
+	4800 4050 4550 4050
+Wire Wire Line
+	4550 4050 4550 3700
+Connection ~ 4800 4050
+$Comp
+L R-RESCUE-eink_example R3
+U 1 1 514EBC96
+P 2950 4000
+F 0 "R3" V 3030 4000 40  0000 C CNN
+F 1 "10k" V 2957 3999 40  0000 C CNN
+F 2 "SM0402_r" V 2880 4000 30  0001 C CNN
+F 3 "~" H 2950 4000 30  0000 C CNN
+F 4 "Pull-down for SHDN_POS" H 2950 -5000 60  0001 C CNN "Purpose"
+	1    2950 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L R-RESCUE-eink_example R4
+U 1 1 514EBC9C
+P 3150 4000
+F 0 "R4" V 3230 4000 40  0000 C CNN
+F 1 "10k" V 3157 3999 40  0000 C CNN
+F 2 "SM0402_r" V 3080 4000 30  0001 C CNN
+F 3 "~" H 3150 4000 30  0000 C CNN
+F 4 "Pull-down for SHDN_NEG" H 3150 -5000 60  0001 C CNN "Purpose"
+	1    3150 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 3750 2950 3300
+Connection ~ 2950 3300
+Wire Wire Line
+	3150 3700 3150 3750
+Connection ~ 3150 3700
+$Comp
+L GND-RESCUE-eink_example #PWR6
+U 1 1 514EBCE3
+P 2950 4300
+F 0 "#PWR6" H 2950 4300 30  0001 C CNN
+F 1 "GND" H 2950 4370 30  0001 C CNN
+F 2 "" H 2950 4300 60  0000 C CNN
+F 3 "" H 2950 4300 60  0000 C CNN
+	1    2950 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 4300 2950 4250
+Wire Wire Line
+	2950 4250 3150 4250
+Connection ~ 2950 4250
+Connection ~ 5100 4550
+Connection ~ 4250 4550
+$Comp
+L C-RESCUE-eink_example C3
+U 1 1 515316E8
+P 4700 2700
+F 0 "C3" H 4700 2600 40  0000 L CNN
+F 1 "4.7µF" H 4706 2785 40  0000 L CNN
+F 2 "SM0805" H 4738 2850 30  0001 C CNN
+F 3 "~" H 4700 2700 60  0000 C CNN
+F 4 "Bypass for +22V supply" H 4700 -1300 60  0001 C CNN "Purpose"
+F 5 "1759431" H 4700 -1300 60  0001 C CNN "Farnell"
+	1    4700 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L C-RESCUE-eink_example C4
+U 1 1 515317A9
+P 5100 4350
+F 0 "C4" H 5100 4250 40  0000 L CNN
+F 1 "4.7µF" H 5106 4435 40  0000 L CNN
+F 2 "SM0805" H 5138 4500 30  0001 C CNN
+F 3 "~" H 5100 4350 60  0000 C CNN
+F 4 "Bypass for -20V supply" H 5100 -6050 60  0001 C CNN "Purpose"
+F 5 "1759431" H 5100 -6050 60  0001 C CNN "Farnell"
+	1    5100 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 TP2
+U 1 1 515ADB0E
+P 5100 2350
+F 0 "TP2" H 5180 2350 40  0000 L CNN
+F 1 "+22V" H 5100 2295 30  0001 C CNN
+F 2 "SIL-1" H 5100 2350 60  0001 C CNN
+F 3 "~" H 5100 2350 60  0000 C CNN
+F 4 "Testpoint for verifying voltages" H -3750 -6500 60  0001 C CNN "Purpose"
+	1    5100 2350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_1 TP5
+U 1 1 515ADB2C
+P 6200 2650
+F 0 "TP5" H 6280 2650 40  0000 L CNN
+F 1 "+15V" H 6200 2595 30  0001 C CNN
+F 2 "SIL-1" H 6200 2650 60  0001 C CNN
+F 3 "~" H 6200 2650 60  0000 C CNN
+F 4 "Testpoint for verifying voltages" H -550 -4100 60  0001 C CNN "Purpose"
+	1    6200 2650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_1 TP6
+U 1 1 515ADB4A
+P 6200 4400
+F 0 "TP6" H 6280 4400 40  0000 L CNN
+F 1 "-15V" H 6200 4345 30  0001 C CNN
+F 2 "SIL-1" H 6200 4400 60  0001 C CNN
+F 3 "~" H 6200 4400 60  0000 C CNN
+F 4 "Testpoint for verifying voltages" H 6200 4400 60  0001 C CNN "Purpose"
+	1    6200 4400
+	0    1    1    0   
+$EndComp
+$Comp
+L CONN_1 TP3
+U 1 1 515ADB68
+P 5350 4700
+F 0 "TP3" H 5430 4700 40  0000 L CNN
+F 1 "-20V" H 5350 4645 30  0001 C CNN
+F 2 "SIL-1" H 5350 4700 60  0001 C CNN
+F 3 "~" H 5350 4700 60  0000 C CNN
+F 4 "Testpoint for verifying voltages" H 3550 6500 60  0001 C CNN "Purpose"
+	1    5350 4700
+	0    1    1    0   
+$EndComp
+$Comp
+L GND-RESCUE-eink_example #PWR16
+U 1 1 516B15FB
+P 5650 3400
+F 0 "#PWR16" H 5650 3400 30  0001 C CNN
+F 1 "GND" H 5650 3470 30  0001 C CNN
+F 2 "" H 5650 3400 60  0000 C CNN
+F 3 "" H 5650 3400 60  0000 C CNN
+	1    5650 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 2800 5100 2500
+Wire Wire Line
+	6200 2800 6750 2800
+Connection ~ 6200 2800
+$Comp
+L LM78LxxACDG U4
+U 1 1 516B193B
+P 5800 2850
+F 0 "U4" H 5600 3050 40  0000 C CNN
+F 1 "LM78L15ACDG" H 5700 3050 40  0000 L CNN
+F 2 "SO8E" H 5800 2750 30  0001 C CIN
+F 3 "~" H 5800 2850 60  0000 C CNN
+F 4 "Regulator for +15V supply" H 5800 -2350 60  0001 C CNN "Purpose"
+F 5 "1211121" H 5800 -2350 60  0001 C CNN "Farnell"
+	1    5800 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 3100 5650 3400
+Wire Wire Line
+	5650 3300 6500 3300
+Connection ~ 5650 3300
+Wire Wire Line
+	5750 3100 5750 3300
+Connection ~ 5750 3300
+Wire Wire Line
+	5850 3100 5850 3300
+Connection ~ 5850 3300
+Wire Wire Line
+	5950 3300 5950 3100
+Connection ~ 5950 3300
+$Comp
+L LM79LxxACDG U5
+U 1 1 516B1A4E
+P 5800 4200
+F 0 "U5" H 5600 4400 40  0000 C CNN
+F 1 "LM79L15ACDG" H 5700 4400 40  0000 L CNN
+F 2 "SO8E" H 5800 4100 30  0001 C CIN
+F 3 "~" H 5800 4200 60  0000 C CNN
+F 4 "Regulator for -15V supply" H 5800 4200 60  0001 C CNN "Purpose"
+F 5 "1211126" H 5800 4200 60  0001 C CNN "Farnell"
+	1    5800 4200
+	1    0    0    1   
+$EndComp
+$Comp
+L GND-RESCUE-eink_example #PWR17
+U 1 1 516B1A7E
+P 5800 3600
+F 0 "#PWR17" H 5800 3600 30  0001 C CNN
+F 1 "GND" H 5800 3670 30  0001 C CNN
+F 2 "" H 5800 3600 60  0000 C CNN
+F 3 "" H 5800 3600 60  0000 C CNN
+	1    5800 3600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6200 4250 6750 4250
+Connection ~ 6200 4250
+Wire Wire Line
+	5800 3600 5800 3950
+Wire Wire Line
+	5400 4150 5350 4150
+Wire Wire Line
+	5350 4150 5350 4550
+Connection ~ 5350 4550
+Wire Wire Line
+	5350 4200 5400 4200
+Connection ~ 5350 4200
+Wire Wire Line
+	5400 4250 5350 4250
+Connection ~ 5350 4250
+Wire Wire Line
+	5350 4300 5400 4300
+Connection ~ 5350 4300
+$Comp
+L R-RESCUE-eink_example R11
+U 1 1 516B1C27
+P 6450 4000
+F 0 "R11" V 6530 4000 40  0000 C CNN
+F 1 "10k" V 6457 3999 40  0000 C CNN
+F 2 "SM0402_r" V 6380 4000 30  0001 C CNN
+F 3 "~" H 6450 4000 30  0000 C CNN
+F 4 "Minimum load for LM79L" H 6450 -4400 60  0001 C CNN "Purpose"
+	1    6450 4000
+	1    0    0    -1  
+$EndComp
+Connection ~ 6450 4250
+Wire Wire Line
+	5800 3750 6450 3750
+Connection ~ 5800 3750
+Wire Wire Line
+	6200 3850 6200 3750
+Connection ~ 6200 3750
+$Comp
+L R-RESCUE-eink_example R12
+U 1 1 516B1CEF
+P 6500 3050
+F 0 "R12" V 6580 3050 40  0000 C CNN
+F 1 "10k" V 6507 3049 40  0000 C CNN
+F 2 "SM0402_r" V 6430 3050 30  0001 C CNN
+F 3 "~" H 6500 3050 30  0000 C CNN
+F 4 "Minimum load for LM78L" H 6500 -5350 60  0001 C CNN "Purpose"
+	1    6500 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C-RESCUE-eink_example C5
+U 1 1 514EB9BE
+P 6200 3000
+F 0 "C5" H 6200 2900 40  0000 L CNN
+F 1 "4.7µF" H 6206 3085 40  0000 L CNN
+F 2 "SM0805" H 6238 3150 30  0001 C CNN
+F 3 "~" H 6200 3000 60  0000 C CNN
+F 4 "Bypass for +15V supply" H 6200 -1900 60  0001 C CNN "Purpose"
+F 5 "1759431" H 6200 -1900 60  0001 C CNN "Farnell"
+	1    6200 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6200 3200 6200 3300
+Connection ~ 6200 3300
+Connection ~ 6500 2800
+Wire Wire Line
+	3850 4300 3850 4550
+Text Notes 6750 2900 0    60   ~ 0
++15V
+Text Notes 6750 4350 0    60   ~ 0
+-15V
+Text Notes 5500 4650 0    60   ~ 0
+-20V
+Text Notes 5300 2600 0    60   ~ 0
++22V
+Connection ~ 5100 2500
+Wire Wire Line
+	5100 2800 5400 2800
+Connection ~ 4700 2500
+Wire Wire Line
+	4150 2500 4150 2600
+$Comp
+L MOSFET_P Q1
+U 1 1 519E97DE
+P 1700 3350
+F 0 "Q1" H 1550 3500 60  0000 R CNN
+F 1 "IRLML6402" H 1550 3600 60  0000 R CNN
+F 2 "~" H 1700 3350 60  0000 C CNN
+F 3 "~" H 1700 3350 60  0000 C CNN
+	1    1700 3350
+	1    0    0    1   
+$EndComp
+$Comp
+L +BATT #PWR3
+U 1 1 519E987A
+P 1800 2700
+F 0 "#PWR3" H 1800 2650 20  0001 C CNN
+F 1 "+BATT" H 1800 2800 30  0000 C CNN
+F 2 "" H 1800 2700 60  0000 C CNN
+F 3 "" H 1800 2700 60  0000 C CNN
+	1    1800 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3850 2600 3850 2500
+Wire Wire Line
+	2100 2600 3550 2600
+Wire Wire Line
+	2100 2600 2100 4550
+Wire Wire Line
+	2100 3550 1800 3550
+Wire Wire Line
+	3250 2600 3250 2500
+Connection ~ 3250 2600
+Connection ~ 1800 3550
+Wire Wire Line
+	2100 4550 3250 4550
+Connection ~ 2100 3550
+Text Label 2100 2600 0    60   ~ 0
+SMPS_V+
+Wire Wire Line
+	1500 3350 1350 3350
+Text Label 1350 3350 2    60   ~ 0
+SMPS_CTRL
+$Comp
+L CONN_1 TP4
+U 1 1 519E9CDA
+P 5500 3300
+F 0 "TP4" H 5580 3300 40  0000 L CNN
+F 1 "+22V" H 5500 3245 30  0001 C CNN
+F 2 "SIL-1" H 5500 3300 60  0001 C CNN
+F 3 "~" H 5500 3300 60  0000 C CNN
+F 4 "Testpoint for verifying voltages" H -3350 -5550 60  0001 C CNN "Purpose"
+	1    5500 3300
+	-1   0    0    1   
+$EndComp
+$Comp
+L R-RESCUE-eink_example R1
+U 1 1 519E9DAF
+P 1500 3100
+F 0 "R1" V 1580 3100 40  0000 C CNN
+F 1 "10k" V 1507 3099 40  0000 C CNN
+F 2 "SM0402_r" V 1430 3100 30  0001 C CNN
+F 3 "~" H 1500 3100 30  0000 C CNN
+F 4 "Pull-down for SHDN_POS" H 1500 -5900 60  0001 C CNN "Purpose"
+	1    1500 3100
+	1    0    0    -1  
+$EndComp
+Connection ~ 1500 3350
+Wire Wire Line
+	1800 2700 1800 3150
+Wire Wire Line
+	1500 2850 1800 2850
+Connection ~ 1800 2850
+$Comp
+L FPC39-P0P3 J1
+U 1 1 5642D580
+P 11500 4100
+F 0 "J1" H 11200 6100 60  0000 C CNN
+F 1 "FPC39-P0P3" H 11450 1900 60  0000 C CNN
+F 2 "" H 12650 5400 60  0000 C CNN
+F 3 "" H 12650 5400 60  0000 C CNN
+	1    11500 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L IS61LV256AL U2
+U 1 1 564D434D
+P 3350 6050
+F 0 "U2" H 2800 5200 50  0000 C CNN
+F 1 "IS61LV256AL" H 3700 5200 50  0000 C CNN
+F 2 "MODULE" H 3350 5750 50  0001 C CNN
+F 3 "DOCUMENTATION" H 3350 6350 50  0001 C CNN
+	1    3350 6050
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	4300 6300 5600 6300
+Wire Wire Line
+	4300 6400 5600 6400
+Wire Wire Line
+	4300 6500 5600 6500
+Wire Wire Line
+	7200 5200 7200 5800
+Wire Wire Line
+	4300 5700 4800 5700
+Wire Wire Line
+	4300 5800 4800 5800
+Wire Wire Line
+	4800 5900 4300 5900
+Wire Wire Line
+	4800 6100 4300 6100
+Wire Wire Line
+	4800 6200 4300 6200
+Wire Wire Line
+	6800 5200 6800 5800
+Wire Wire Line
+	6900 5200 6900 5800
+Wire Wire Line
+	7000 5200 7000 5800
+Wire Wire Line
+	7100 5200 7100 5800
+Wire Wire Line
+	2400 5400 1900 5400
+Wire Wire Line
+	1900 5500 2400 5500
+Wire Wire Line
+	1900 5600 2400 5600
+Wire Wire Line
+	1900 5700 2400 5700
+Wire Wire Line
+	1900 5800 2400 5800
+Wire Wire Line
+	1900 5900 2400 5900
+Wire Wire Line
+	1900 6000 2400 6000
+Wire Wire Line
+	1900 6200 2400 6200
+Wire Wire Line
+	1900 6300 2400 6300
+Wire Wire Line
+	1900 6400 2400 6400
+Wire Wire Line
+	1900 6500 2400 6500
+Wire Wire Line
+	2400 6600 1900 6600
+Wire Wire Line
+	2400 6700 1900 6700
+Wire Wire Line
+	4300 6600 4800 6600
+Wire Wire Line
+	4800 6700 4300 6700
+Wire Wire Line
+	2400 6100 2300 6100
+Wire Wire Line
+	2300 6100 2300 5300
+Wire Wire Line
+	4300 6000 4400 6000
+Wire Wire Line
+	4400 6000 4400 6900
+Wire Wire Line
+	4300 5600 4800 5600
+Wire Wire Line
+	4800 5500 4300 5500
+Wire Wire Line
+	4300 5400 4800 5400
+$Comp
+L +3.3V-RESCUE-eink_example #PWR5
+U 1 1 564D949E
+P 2300 5300
+F 0 "#PWR5" H 2300 5340 30  0001 C CNN
+F 1 "+3.3V" H 2300 5400 30  0000 C CNN
+F 2 "" H 2300 5300 60  0000 C CNN
+F 3 "" H 2300 5300 60  0000 C CNN
+	1    2300 5300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 6600 5600 6600
+Wire Wire Line
+	5000 6700 5600 6700
+Wire Wire Line
+	5000 6800 5600 6800
+Wire Wire Line
+	5000 7000 5600 7000
+Wire Wire Line
+	5000 7800 5600 7800
+Wire Wire Line
+	7400 8900 7400 8300
+Wire Wire Line
+	7300 8900 7300 8300
+Wire Wire Line
+	7500 8900 7500 8300
+Wire Wire Line
+	7800 8900 7800 8300
+Wire Wire Line
+	7900 8900 7900 8300
+Wire Wire Line
+	8000 8900 8000 8300
+Wire Wire Line
+	8100 8900 8100 8300
+Wire Wire Line
+	8200 8900 8200 8300
+Wire Wire Line
+	8300 8900 8300 8300
+Wire Wire Line
+	8300 5200 8300 5800
+Wire Wire Line
+	8200 5200 8200 5800
+Wire Wire Line
+	8100 5200 8100 5800
+Wire Wire Line
+	8000 5200 8000 5800
+Wire Wire Line
+	7900 5200 7900 5800
+Wire Wire Line
+	7800 5200 7800 5800
+Wire Wire Line
+	7700 5200 7700 5800
+Wire Wire Line
+	9400 6500 10000 6500
+Text Label 7700 5700 1    60   ~ 0
+RD7
+Text Label 7800 5700 1    60   ~ 0
+RD6
+Text Label 8100 5700 1    60   ~ 0
+RD3
+Text Label 8200 5700 1    60   ~ 0
+RD2
+Text Label 8300 5700 1    60   ~ 0
+RD1
+Text Label 9700 6500 0    60   ~ 0
+RD0
+Text Label 5200 6300 0    60   ~ 0
+PMD5
+Text Label 5200 6400 0    60   ~ 0
+PMD6
+Text Label 5200 6500 0    60   ~ 0
+PMD7
+Text Label 7200 5700 1    60   ~ 0
+PMD0
+Text Label 7100 5700 1    60   ~ 0
+PMD1
+Text Label 7000 5700 1    60   ~ 0
+PMD2
+Text Label 6900 5700 1    60   ~ 0
+PMD3
+Text Label 6800 5700 1    60   ~ 0
+PMD4
+Text Label 5200 6700 0    60   ~ 0
+PMA4
+Text Label 5200 6600 0    60   ~ 0
+PMA5
+Text Label 5200 6800 0    60   ~ 0
+PMA3
+Text Label 5200 7000 0    60   ~ 0
+PMA2
+Text Label 5200 7800 0    60   ~ 0
+PMA6
+Text Label 7300 8700 1    60   ~ 0
+PMA7
+Text Label 7400 8700 1    60   ~ 0
+PMA13
+Text Label 7500 8700 1    60   ~ 0
+PMA12
+Text Label 7800 8700 1    60   ~ 0
+PMA11
+Text Label 7900 8700 1    60   ~ 0
+PMA10
+Text Label 8000 8700 1    60   ~ 0
+PMA1
+Text Label 8100 8700 1    60   ~ 0
+PMA0
+Text Label 8200 8700 1    60   ~ 0
+PMA9
+Text Label 8300 8700 1    60   ~ 0
+PMA8
+Text Label 4500 6200 0    60   ~ 0
+PMD4
+Text Label 4500 6100 0    60   ~ 0
+PMD3
+Text Label 4500 5900 0    60   ~ 0
+PMD2
+Text Label 4500 5800 0    60   ~ 0
+PMD1
+Text Label 4500 5700 0    60   ~ 0
+PMD0
+Text Label 4500 5600 0    60   ~ 0
+PMA0
+Text Label 4500 5500 0    60   ~ 0
+PMA1
+Text Label 4500 5400 0    60   ~ 0
+PMA2
+Text Label 4500 6700 0    60   ~ 0
+PMA10
+Text Label 1950 6600 0    60   ~ 0
+PMA11
+Text Label 1950 5400 0    60   ~ 0
+PMA3
+Text Label 1950 5500 0    60   ~ 0
+PMA4
+Text Label 1950 5600 0    60   ~ 0
+PMA5
+Text Label 1950 5700 0    60   ~ 0
+PMA6
+Text Label 1950 5800 0    60   ~ 0
+PMA7
+Text Label 1950 5900 0    60   ~ 0
+PMA12
+Text Label 1950 6000 0    60   ~ 0
+PMA14
+Text Label 1950 6300 0    60   ~ 0
+PMA13
+Text Label 1950 6400 0    60   ~ 0
+PMA8
+Text Label 1950 6500 0    60   ~ 0
+PMA9
+$Comp
+L SD_Card CON1
+U 1 1 564DF070
+P 9900 9200
+F 0 "CON1" H 9250 9750 50  0000 C CNN
+F 1 "SD_Card" H 10500 8650 50  0000 C CNN
+F 2 "10067847-001" H 10100 9550 50  0000 C CNN
+F 3 "" H 9900 9200 60  0000 C CNN
+	1    9900 9200
+	-1   0    0    1   
+$EndComp
+Text Label 4500 6600 0    60   ~ 0
+IS-~CE
+Text Label 1950 6200 0    60   ~ 0
+IS-~WE
+Text Label 1950 6700 0    60   ~ 0
+IS-~OE
+Text Label 7900 5700 1    60   ~ 0
+IS-~OE
+Text Label 5450 7400 2    60   ~ 0
+IS-~CE
+Text Label 8000 5700 1    60   ~ 0
+IS-~WE
+Wire Wire Line
+	5600 7400 5000 7400
+Wire Wire Line
+	9400 6600 10000 6600
+Wire Wire Line
+	10000 6700 9400 6700
+Text Label 9700 6600 0    60   ~ 0
+RD11
+Text Label 9700 6700 0    60   ~ 0
+RD10
+Wire Wire Line
+	10000 6800 9400 6800
+Wire Wire Line
+	10000 6900 9400 6900
+Text Label 9700 6800 0    60   ~ 0
+RD9
+Text Label 9700 6900 0    60   ~ 0
+RD8
+$Comp
+L pic32mx330f064h U6
+U 1 1 5650D220
+P 7600 7100
+F 0 "U6" H 6050 8200 50  0000 C CNN
+F 1 "pic32mx330f064h" H 8850 6100 50  0000 C CNN
+F 2 "MODULE" H 6150 6100 50  0001 C CNN
+F 3 "DOCUMENTATION" H 8800 8200 50  0001 C CNN
+	1    7600 7100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10800 9500 11700 9500
+Wire Wire Line
+	10800 9100 11700 9100
+Wire Wire Line
+	10800 8900 11700 8900
+Wire Wire Line
+	10800 9400 11700 9400
+Wire Wire Line
+	10900 8800 10900 9700
+Wire Wire Line
+	10900 9300 10800 9300
+Wire Wire Line
+	10800 9000 10900 9000
+Connection ~ 10900 9300
+Wire Wire Line
+	11100 9200 10800 9200
+Wire Wire Line
+	11100 8200 11100 9200
+$Comp
+L +3.3V-RESCUE-eink_example #PWR40
+U 1 1 56511363
+P 11100 8200
+F 0 "#PWR40" H 11100 8240 30  0001 C CNN
+F 1 "+3.3V" H 11100 8300 30  0000 C CNN
+F 2 "" H 11100 8200 60  0000 C CNN
+F 3 "" H 11100 8200 60  0000 C CNN
+	1    11100 8200
+	1    0    0    -1  
+$EndComp
+Text Label 11200 8900 0    60   ~ 0
+SD_DAT
+Text Label 11200 9100 0    60   ~ 0
+SD_CLK
+Text Label 11200 9400 0    60   ~ 0
+SD_IN
+Text Label 11200 9500 0    60   ~ 0
+SD_CS
+Wire Wire Line
+	9400 7800 10300 7800
+Wire Wire Line
+	9400 7700 10300 7700
+Wire Wire Line
+	10300 7600 9400 7600
+Wire Wire Line
+	9400 7500 10300 7500
+Wire Wire Line
+	10300 7400 9400 7400
+Text Label 9600 7800 0    60   ~ 0
+SD_IN
+Text Label 9600 7700 0    60   ~ 0
+SD_DAT
+Text Label 9600 7600 0    60   ~ 0
+SD_CLK
+Text Label 9600 7500 0    60   ~ 0
+SD_CS
+Text Label 9600 7400 0    60   ~ 0
+SD_WP
+Wire Wire Line
+	9000 9300 8400 9300
+Text Label 8500 9300 0    60   ~ 0
+SD_WP
+Wire Wire Line
+	9000 9400 8400 9400
+Text Label 8500 9400 0    60   ~ 0
+SD_DET
+Text Label 7200 8750 1    60   ~ 0
+SD_DET
+Wire Wire Line
+	7200 8900 7200 8300
+Wire Wire Line
+	8900 9000 8900 9700
+Wire Wire Line
+	8900 9000 9000 9000
+Wire Wire Line
+	9000 9100 8900 9100
+Connection ~ 8900 9100
+$Comp
+L +3.3V-RESCUE-eink_example #PWR30
+U 1 1 565135A7
+P 8200 9100
+F 0 "#PWR30" H 8200 9140 30  0001 C CNN
+F 1 "+3.3V" H 8200 9200 30  0000 C CNN
+F 2 "" H 8200 9100 60  0000 C CNN
+F 3 "" H 8200 9100 60  0000 C CNN
+	1    8200 9100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7600 8300 7600 9600
+Wire Wire Line
+	7700 8300 7700 9200
+Wire Wire Line
+	7700 9200 8200 9200
+Wire Wire Line
+	8200 9100 8200 9400
+Wire Wire Line
+	7700 9400 7600 9400
+Connection ~ 7600 9400
+Wire Wire Line
+	8200 9400 8100 9400
+Connection ~ 8200 9200
+$Comp
+L C-RESCUE-eink_example C13
+U 1 1 56514B34
+P 10900 8600
+F 0 "C13" H 11000 8350 40  0000 L CNN
+F 1 "100nF" H 11000 8450 40  0000 L CNN
+F 2 "SM0402" H 10938 8750 30  0001 C CNN
+F 3 "~" H 10900 8600 60  0000 C CNN
+F 4 "STM32L151 supply bypass" H 10900 6200 60  0001 C CNN "Purpose"
+	1    10900 8600
+	-1   0    0    1   
+$EndComp
+Connection ~ 10900 9000
+Wire Wire Line
+	10900 8400 10900 8300
+Wire Wire Line
+	10900 8300 11100 8300
+Connection ~ 11100 8300
+Wire Wire Line
+	9500 7000 9400 7000
+Wire Wire Line
+	10800 4100 10100 4100
+Wire Wire Line
+	10100 4000 10800 4000
+Wire Wire Line
+	10100 3900 10800 3900
+Wire Wire Line
+	10100 3800 10800 3800
+Wire Wire Line
+	10800 3700 10100 3700
+Wire Wire Line
+	10100 3600 10800 3600
+Wire Wire Line
+	10100 3500 10800 3500
+Wire Wire Line
+	10100 3400 10800 3400
+Wire Wire Line
+	10800 3300 10100 3300
+Wire Wire Line
+	10700 3000 10800 3000
+Wire Wire Line
+	10800 2900 10100 2900
+Wire Wire Line
+	10100 2800 10800 2800
+Wire Wire Line
+	10100 2700 10800 2700
+Wire Wire Line
+	10100 2600 10800 2600
+Wire Wire Line
+	10700 2500 10800 2500
+Wire Wire Line
+	10100 2400 10800 2400
+Wire Wire Line
+	10100 2300 10800 2300
+NoConn ~ 10800 3100
+NoConn ~ 10800 3200
+NoConn ~ 10800 4200
+NoConn ~ 10800 4300
+NoConn ~ 10800 4700
+NoConn ~ 10800 4800
+NoConn ~ 10800 6100
+Wire Wire Line
+	10800 4600 10100 4600
+Wire Wire Line
+	10100 4500 10800 4500
+Wire Wire Line
+	10100 4400 10800 4400
+Wire Wire Line
+	10500 5700 10800 5700
+Wire Wire Line
+	10400 5600 10800 5600
+Wire Wire Line
+	9900 5500 10800 5500
+Wire Wire Line
+	10400 5400 10800 5400
+Wire Wire Line
+	10800 5300 10400 5300
+Wire Wire Line
+	10100 5200 10800 5200
+Wire Wire Line
+	10500 5100 10800 5100
+Wire Wire Line
+	10600 5000 10800 5000
+Wire Wire Line
+	10100 4900 10800 4900
+Wire Wire Line
+	10800 6000 10400 6000
+Wire Wire Line
+	9900 5900 10800 5900
+Wire Wire Line
+	10500 5800 10800 5800
+Text Label 10300 4100 0    60   ~ 0
+RD8
+Text Label 10300 4000 0    60   ~ 0
+RD9
+Text Label 10300 3900 0    60   ~ 0
+RD10
+Text Label 10300 3800 0    60   ~ 0
+RD11
+Text Label 10300 3700 0    60   ~ 0
+RD0
+Text Label 10300 3600 0    60   ~ 0
+RD1
+Text Label 10300 3500 0    60   ~ 0
+RD2
+Text Label 10300 3400 0    60   ~ 0
+RD3
+$Comp
+L GND #PWR38
+U 1 1 56517DCF
+P 10700 3000
+F 0 "#PWR38" H 10700 2750 50  0001 C CNN
+F 1 "GND" H 10700 2850 50  0000 C CNN
+F 2 "" H 10700 3000 60  0000 C CNN
+F 3 "" H 10700 3000 60  0000 C CNN
+	1    10700 3000
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR32
+U 1 1 56518021
+P 9500 7000
+F 0 "#PWR32" H 9500 6750 50  0001 C CNN
+F 1 "GND" H 9500 6850 50  0000 C CNN
+F 2 "" H 9500 7000 60  0000 C CNN
+F 3 "" H 9500 7000 60  0000 C CNN
+	1    9500 7000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR39
+U 1 1 565180CD
+P 10900 9700
+F 0 "#PWR39" H 10900 9450 50  0001 C CNN
+F 1 "GND" H 10900 9550 50  0000 C CNN
+F 2 "" H 10900 9700 60  0000 C CNN
+F 3 "" H 10900 9700 60  0000 C CNN
+	1    10900 9700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR31
+U 1 1 5651812D
+P 8900 9700
+F 0 "#PWR31" H 8900 9450 50  0001 C CNN
+F 1 "GND" H 8900 9550 50  0000 C CNN
+F 2 "" H 8900 9700 60  0000 C CNN
+F 3 "" H 8900 9700 60  0000 C CNN
+	1    8900 9700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR29
+U 1 1 565181B1
+P 7600 9600
+F 0 "#PWR29" H 7600 9350 50  0001 C CNN
+F 1 "GND" H 7600 9450 50  0000 C CNN
+F 2 "" H 7600 9600 60  0000 C CNN
+F 3 "" H 7600 9600 60  0000 C CNN
+	1    7600 9600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR8
+U 1 1 56518501
+P 4400 6900
+F 0 "#PWR8" H 4400 6650 50  0001 C CNN
+F 1 "GND" H 4400 6750 50  0000 C CNN
+F 2 "" H 4400 6900 60  0000 C CNN
+F 3 "" H 4400 6900 60  0000 C CNN
+	1    4400 6900
+	1    0    0    -1  
+$EndComp
+Text Notes 1750 2100 0    60   ~ 0
+Online sources indicate the 78L15 and 79L15 are inefficient.  8mA draw multiplied by boost.
+Text Label 10300 3300 0    60   ~ 0
+RD6
+Text Label 10300 2900 0    60   ~ 0
+RD7
+Text Label 7400 5700 1    60   ~ 0
+RF0
+Text Label 7300 5700 1    60   ~ 0
+RF1
+Wire Wire Line
+	7300 5800 7300 5200
+Wire Wire Line
+	7400 5800 7400 5200
+Text Label 10300 2700 0    60   ~ 0
+RF0
+Text Label 10200 2600 0    60   ~ 0
+RF1
+Wire Wire Line
+	10500 5100 10500 5800
+Connection ~ 10500 5200
+Connection ~ 10500 5700
+Wire Wire Line
+	10600 4900 10600 5000
+Connection ~ 10600 4900
+$Comp
+L GND #PWR33
+U 1 1 5651BEF3
+P 10400 5300
+F 0 "#PWR33" H 10400 5050 50  0001 C CNN
+F 1 "GND" H 10400 5150 50  0000 C CNN
+F 2 "" H 10400 5300 60  0000 C CNN
+F 3 "" H 10400 5300 60  0000 C CNN
+	1    10400 5300
+	0    1    1    0   
+$EndComp
+Text Label 10200 5200 0    60   ~ 0
+RF1
+Wire Wire Line
+	5000 6900 5600 6900
+Text Label 5100 6900 0    60   ~ 0
+~MCLR
+Text Label 5100 7300 0    60   ~ 0
+RB5
+Wire Wire Line
+	5000 7300 5600 7300
+Text Label 10200 2800 0    60   ~ 0
+RB5
+Wire Wire Line
+	10400 5400 10400 5500
+Connection ~ 10400 5500
+$Comp
+L GND #PWR34
+U 1 1 5651CDB7
+P 10400 5600
+F 0 "#PWR34" H 10400 5350 50  0001 C CNN
+F 1 "GND" H 10400 5450 50  0000 C CNN
+F 2 "" H 10400 5600 60  0000 C CNN
+F 3 "" H 10400 5600 60  0000 C CNN
+	1    10400 5600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	10400 6000 10400 5900
+Connection ~ 10400 5900
+Wire Wire Line
+	9400 6300 10000 6300
+Wire Wire Line
+	9400 7100 10000 7100
+Wire Wire Line
+	9400 7200 10000 7200
+Text Label 9700 6300 0    60   ~ 0
+RC14
+Text Label 9700 7100 0    60   ~ 0
+RC15
+Text Label 9700 7200 0    60   ~ 0
+RC12
+Text Label 10200 4900 0    60   ~ 0
+RC14
+Text Label 10000 5500 0    60   ~ 0
+RC15
+Text Label 10000 5900 0    60   ~ 0
+RC12
+$Comp
+L GND #PWR37
+U 1 1 5651DDA8
+P 10700 2500
+F 0 "#PWR37" H 10700 2250 50  0001 C CNN
+F 1 "GND" H 10700 2350 50  0000 C CNN
+F 2 "" H 10700 2500 60  0000 C CNN
+F 3 "" H 10700 2500 60  0000 C CNN
+	1    10700 2500
+	0    1    1    0   
+$EndComp
+Text Notes 1950 4900 0    60   ~ 0
+This schematic assumes Li-ion battery (3.5 - 4.2 V) as BATT+.
+Text Label 10200 4500 0    60   ~ 0
+GVDD
+Text Label 10200 4600 0    60   ~ 0
+GVEE
+Text Label 10200 2300 0    60   ~ 0
+VNEG
+Text Label 10200 2400 0    60   ~ 0
+VPOS
+Text Label 9400 3500 2    60   ~ 0
+VCOM
+Text Label 10200 4400 0    60   ~ 0
+VCOM
+Wire Wire Line
+	7750 2950 7800 2950
+Text Label 4900 7500 0    60   ~ 0
+VPOS_CTRL
+Text Label 4900 7600 0    60   ~ 0
+VNEG_CTRL
+Text Label 4900 7700 0    60   ~ 0
+SMPS_CTRL
+Wire Wire Line
+	4900 7500 5600 7500
+Wire Wire Line
+	5600 7600 4900 7600
+Wire Wire Line
+	4900 7700 5600 7700
+$Comp
+L +3.3V-RESCUE-eink_example #PWR35
+U 1 1 56522A03
+P 10600 6700
+F 0 "#PWR35" H 10600 6740 30  0001 C CNN
+F 1 "+3.3V" H 10600 6800 30  0000 C CNN
+F 2 "" H 10600 6700 60  0000 C CNN
+F 3 "" H 10600 6700 60  0000 C CNN
+	1    10600 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10600 7300 9400 7300
+Wire Wire Line
+	10600 6700 10600 7400
+$Comp
+L C-RESCUE-eink_example C12
+U 1 1 56523094
+P 10600 7600
+F 0 "C12" H 10650 7450 40  0000 L CNN
+F 1 "100nF" H 10650 7750 40  0000 L CNN
+F 2 "SM0402" H 10638 7750 30  0001 C CNN
+F 3 "~" H 10600 7600 60  0000 C CNN
+F 4 "STM32L151 supply bypass" H 10600 5200 60  0001 C CNN "Purpose"
+	1    10600 7600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9400 6400 11300 6400
+Text Notes 9100 10000 0    60   ~ 0
+Can communicate to 3.3V directly.
+$Comp
+L GND #PWR36
+U 1 1 565246D9
+P 10600 7900
+F 0 "#PWR36" H 10600 7650 50  0001 C CNN
+F 1 "GND" H 10600 7750 50  0000 C CNN
+F 2 "" H 10600 7900 60  0000 C CNN
+F 3 "" H 10600 7900 60  0000 C CNN
+	1    10600 7900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10600 7900 10600 7800
+$Comp
+L GND #PWR21
+U 1 1 56524A12
+P 7100 8800
+F 0 "#PWR21" H 7100 8550 50  0001 C CNN
+F 1 "GND" H 7100 8650 50  0000 C CNN
+F 2 "" H 7100 8800 60  0000 C CNN
+F 3 "" H 7100 8800 60  0000 C CNN
+	1    7100 8800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 8800 7100 8300
+$Comp
+L GND #PWR14
+U 1 1 56524C44
+P 5300 7100
+F 0 "#PWR14" H 5300 6850 50  0001 C CNN
+F 1 "GND" H 5300 6950 50  0000 C CNN
+F 2 "" H 5300 7100 60  0000 C CNN
+F 3 "" H 5300 7100 60  0000 C CNN
+	1    5300 7100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5300 7100 5600 7100
+Wire Wire Line
+	5600 7200 5500 7200
+$Comp
+L +3.3V-RESCUE-eink_example #PWR15
+U 1 1 5652502E
+P 5500 7200
+F 0 "#PWR15" H 5500 7240 30  0001 C CNN
+F 1 "+3.3V" H 5500 7300 30  0000 C CNN
+F 2 "" H 5500 7200 60  0000 C CNN
+F 3 "" H 5500 7200 60  0000 C CNN
+	1    5500 7200
+	0    -1   -1   0   
+$EndComp
+Connection ~ 10600 7300
+$Comp
+L +3.3V-RESCUE-eink_example #PWR24
+U 1 1 56526119
+P 7500 5600
+F 0 "#PWR24" H 7500 5640 30  0001 C CNN
+F 1 "+3.3V" H 7500 5700 30  0000 C CNN
+F 2 "" H 7500 5600 60  0000 C CNN
+F 3 "" H 7500 5600 60  0000 C CNN
+	1    7500 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR28
+U 1 1 5652622E
+P 7600 5400
+F 0 "#PWR28" H 7600 5150 50  0001 C CNN
+F 1 "GND" H 7600 5250 50  0000 C CNN
+F 2 "" H 7600 5400 60  0000 C CNN
+F 3 "" H 7600 5400 60  0000 C CNN
+	1    7600 5400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7600 5800 7600 5400
+Wire Wire Line
+	7500 5800 7500 5600
+$Comp
+L +3.3V-RESCUE-eink_example #PWR20
+U 1 1 565266D2
+P 7000 8600
+F 0 "#PWR20" H 7000 8640 30  0001 C CNN
+F 1 "+3.3V" H 7000 8700 30  0000 C CNN
+F 2 "" H 7000 8600 60  0000 C CNN
+F 3 "" H 7000 8600 60  0000 C CNN
+	1    7000 8600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7000 8600 7000 8300
+$Comp
+L +3.3V-RESCUE-eink_example #PWR26
+U 1 1 56526FED
+P 7600 4300
+F 0 "#PWR26" H 7600 4340 30  0001 C CNN
+F 1 "+3.3V" H 7600 4400 30  0000 C CNN
+F 2 "" H 7600 4300 60  0000 C CNN
+F 3 "" H 7600 4300 60  0000 C CNN
+	1    7600 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7600 4300 7600 4400
+$Comp
+L C-RESCUE-eink_example C10
+U 1 1 56526FF7
+P 7600 4600
+F 0 "C10" H 7650 4450 40  0000 L CNN
+F 1 "100nF" H 7650 4750 40  0000 L CNN
+F 2 "SM0402" H 7638 4750 30  0001 C CNN
+F 3 "~" H 7600 4600 60  0000 C CNN
+F 4 "STM32L151 supply bypass" H 7600 2200 60  0001 C CNN "Purpose"
+	1    7600 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR27
+U 1 1 56526FFD
+P 7600 4900
+F 0 "#PWR27" H 7600 4650 50  0001 C CNN
+F 1 "GND" H 7600 4750 50  0000 C CNN
+F 2 "" H 7600 4900 60  0000 C CNN
+F 3 "" H 7600 4900 60  0000 C CNN
+	1    7600 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7600 4900 7600 4800
+$Comp
+L +3.3V-RESCUE-eink_example #PWR22
+U 1 1 565273A8
+P 7100 9200
+F 0 "#PWR22" H 7100 9240 30  0001 C CNN
+F 1 "+3.3V" H 7100 9300 30  0000 C CNN
+F 2 "" H 7100 9200 60  0000 C CNN
+F 3 "" H 7100 9200 60  0000 C CNN
+	1    7100 9200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 9200 7100 9300
+$Comp
+L C-RESCUE-eink_example C9
+U 1 1 565273B0
+P 7100 9500
+F 0 "C9" H 7150 9350 40  0000 L CNN
+F 1 "100nF" H 7150 9650 40  0000 L CNN
+F 2 "SM0402" H 7138 9650 30  0001 C CNN
+F 3 "~" H 7100 9500 60  0000 C CNN
+F 4 "STM32L151 supply bypass" H 7100 7100 60  0001 C CNN "Purpose"
+	1    7100 9500
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR23
+U 1 1 565273B6
+P 7100 9800
+F 0 "#PWR23" H 7100 9550 50  0001 C CNN
+F 1 "GND" H 7100 9650 50  0000 C CNN
+F 2 "" H 7100 9800 60  0000 C CNN
+F 3 "" H 7100 9800 60  0000 C CNN
+	1    7100 9800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 9800 7100 9700
+$Comp
+L +3.3V-RESCUE-eink_example #PWR9
+U 1 1 565275C4
+P 4600 7000
+F 0 "#PWR9" H 4600 7040 30  0001 C CNN
+F 1 "+3.3V" H 4600 7100 30  0000 C CNN
+F 2 "" H 4600 7000 60  0000 C CNN
+F 3 "" H 4600 7000 60  0000 C CNN
+	1    4600 7000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 7000 4600 7100
+$Comp
+L C-RESCUE-eink_example C8
+U 1 1 565275CC
+P 4600 7300
+F 0 "C8" H 4650 7150 40  0000 L CNN
+F 1 "100nF" H 4650 7450 40  0000 L CNN
+F 2 "SM0402" H 4638 7450 30  0001 C CNN
+F 3 "~" H 4600 7300 60  0000 C CNN
+F 4 "STM32L151 supply bypass" H 4600 4900 60  0001 C CNN "Purpose"
+	1    4600 7300
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR10
+U 1 1 565275D2
+P 4600 7600
+F 0 "#PWR10" H 4600 7350 50  0001 C CNN
+F 1 "GND" H 4600 7450 50  0000 C CNN
+F 2 "" H 4600 7600 60  0000 C CNN
+F 3 "" H 4600 7600 60  0000 C CNN
+	1    4600 7600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 7600 4600 7500
+$Comp
+L +3.3V-RESCUE-eink_example #PWR1
+U 1 1 5652799F
+P 1700 5300
+F 0 "#PWR1" H 1700 5340 30  0001 C CNN
+F 1 "+3.3V" H 1700 5400 30  0000 C CNN
+F 2 "" H 1700 5300 60  0000 C CNN
+F 3 "" H 1700 5300 60  0000 C CNN
+	1    1700 5300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 5300 1700 5400
+$Comp
+L C-RESCUE-eink_example C7
+U 1 1 565279A7
+P 1700 5600
+F 0 "C7" H 1500 5450 40  0000 L CNN
+F 1 "100nF" H 1500 5750 40  0000 L CNN
+F 2 "SM0402" H 1738 5750 30  0001 C CNN
+F 3 "~" H 1700 5600 60  0000 C CNN
+F 4 "STM32L151 supply bypass" H 1700 3200 60  0001 C CNN "Purpose"
+	1    1700 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR2
+U 1 1 565279AD
+P 1700 5900
+F 0 "#PWR2" H 1700 5650 50  0001 C CNN
+F 1 "GND" H 1700 5750 50  0000 C CNN
+F 2 "" H 1700 5900 60  0000 C CNN
+F 3 "" H 1700 5900 60  0000 C CNN
+	1    1700 5900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 5900 1700 5800
+$Comp
+L CONN_01X05 P1
+U 1 1 5652C156
+P 6700 9300
+F 0 "P1" V 6700 9650 50  0000 C CNN
+F 1 "ICSP1" V 6800 9300 50  0000 C CNN
+F 2 "" H 6700 9300 60  0000 C CNN
+F 3 "" H 6700 9300 60  0000 C CNN
+	1    6700 9300
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	6900 8300 6900 9100
+Wire Wire Line
+	6800 8300 6800 9100
+$Comp
+L +3.3V-RESCUE-eink_example #PWR19
+U 1 1 5652CD44
+P 6600 8900
+F 0 "#PWR19" H 6600 8940 30  0001 C CNN
+F 1 "+3.3V" H 6600 9000 30  0000 C CNN
+F 2 "" H 6600 8900 60  0000 C CNN
+F 3 "" H 6600 8900 60  0000 C CNN
+	1    6600 8900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 9100 6600 8900
+$Comp
+L GND #PWR18
+U 1 1 5652CEFE
+P 6300 9000
+F 0 "#PWR18" H 6300 8750 50  0001 C CNN
+F 1 "GND" H 6300 8850 50  0000 C CNN
+F 2 "" H 6300 9000 60  0000 C CNN
+F 3 "" H 6300 9000 60  0000 C CNN
+	1    6300 9000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6500 9100 6500 9000
+Wire Wire Line
+	6500 9000 6300 9000
+Wire Wire Line
+	6700 8450 6700 9100
+Text Label 6700 8450 3    60   ~ 0
+~MCLR
+Text Notes 1500 9100 0    60   ~ 0
+Still needs battery input connector, linear regulator to 3.3V, \nswitching and +/- voltage linear regulators, wireless...\nAnything else I'm forgetting?  Need to check?
+$Comp
+L SW_PUSH SW1
+U 1 1 56573D9E
+P 11300 7300
+F 0 "SW1" H 11450 7410 50  0000 C CNN
+F 1 "SW_PUSH" H 11300 7220 50  0000 C CNN
+F 2 "" H 11300 7300 60  0000 C CNN
+F 3 "" H 11300 7300 60  0000 C CNN
+	1    11300 7300
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR41
+U 1 1 56574125
+P 11300 7800
+F 0 "#PWR41" H 11300 7550 50  0001 C CNN
+F 1 "GND" H 11300 7650 50  0000 C CNN
+F 2 "" H 11300 7800 60  0000 C CNN
+F 3 "" H 11300 7800 60  0000 C CNN
+	1    11300 7800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11300 7800 11300 7600
+Wire Wire Line
+	11300 6400 11300 7000
+$Comp
+L R-RESCUE-eink_example R5
+U 1 1 56574598
+P 10950 6900
+F 0 "R5" V 11030 6900 40  0000 C CNN
+F 1 "10k" V 10957 6899 40  0000 C CNN
+F 2 "SM0402_r" V 10880 6900 30  0001 C CNN
+F 3 "~" H 10950 6900 30  0000 C CNN
+F 4 "Negative side SMPS feedback" H 10950 -1500 60  0001 C CNN "Purpose"
+	1    10950 6900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	11200 6900 11300 6900
+Connection ~ 11300 6900
+Wire Wire Line
+	10700 6900 10600 6900
+Connection ~ 10600 6900
+$Comp
+L AP1117 U?
+U 1 1 565752FE
+P 2700 7600
+F 0 "U?" H 2600 7950 50  0000 C CNN
+F 1 "AP1117" H 2700 7850 50  0000 C CNN
+F 2 "" H 2700 7600 60  0000 C CNN
+F 3 "" H 2700 7600 60  0000 C CNN
+	1    2700 7600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 565755F9
+P 2700 8200
+F 0 "#PWR?" H 2700 7950 50  0001 C CNN
+F 1 "GND" H 2700 8050 50  0000 C CNN
+F 2 "" H 2700 8200 60  0000 C CNN
+F 3 "" H 2700 8200 60  0000 C CNN
+	1    2700 8200
+	1    0    0    -1  
+$EndComp
+$Comp
+L +BATT #PWR?
+U 1 1 565758EE
+P 2200 7400
+F 0 "#PWR?" H 2200 7350 20  0001 C CNN
+F 1 "+BATT" H 2200 7500 30  0000 C CNN
+F 2 "" H 2200 7400 60  0000 C CNN
+F 3 "" H 2200 7400 60  0000 C CNN
+	1    2200 7400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 7600 2200 7600
+Wire Wire Line
+	2200 7400 2200 7700
+$Comp
+L +3.3V-RESCUE-eink_example #PWR?
+U 1 1 56575C5C
+P 3200 7500
+F 0 "#PWR?" H 3200 7540 30  0001 C CNN
+F 1 "+3.3V" H 3200 7600 30  0000 C CNN
+F 2 "" H 3200 7500 60  0000 C CNN
+F 3 "" H 3200 7500 60  0000 C CNN
+	1    3200 7500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 7600 3200 7600
+Wire Wire Line
+	3200 7500 3200 7700
+Wire Wire Line
+	2700 8200 2700 7900
+$Comp
+L C-RESCUE-eink_example C?
+U 1 1 56577081
+P 3200 7900
+F 0 "C?" H 3200 7800 40  0000 L CNN
+F 1 "4.7µF" H 3206 7985 40  0000 L CNN
+F 2 "SM0805" H 3238 8050 30  0001 C CNN
+F 3 "~" H 3200 7900 60  0000 C CNN
+F 4 "Bypass for -20V supply" H 3200 -2500 60  0001 C CNN "Purpose"
+F 5 "1759431" H 3200 -2500 60  0001 C CNN "Farnell"
+	1    3200 7900
+	1    0    0    -1  
+$EndComp
+$Comp
+L C-RESCUE-eink_example C?
+U 1 1 565771C7
+P 2200 7900
+F 0 "C?" H 2200 7800 40  0000 L CNN
+F 1 "4.7µF" H 2206 7985 40  0000 L CNN
+F 2 "SM0805" H 2238 8050 30  0001 C CNN
+F 3 "~" H 2200 7900 60  0000 C CNN
+F 4 "Bypass for -20V supply" H 2200 -2500 60  0001 C CNN "Purpose"
+F 5 "1759431" H 2200 -2500 60  0001 C CNN "Farnell"
+	1    2200 7900
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 56577373
+P 2200 8200
+F 0 "#PWR?" H 2200 7950 50  0001 C CNN
+F 1 "GND" H 2200 8050 50  0000 C CNN
+F 2 "" H 2200 8200 60  0000 C CNN
+F 3 "" H 2200 8200 60  0000 C CNN
+	1    2200 8200
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5657740E
+P 3200 8200
+F 0 "#PWR?" H 3200 7950 50  0001 C CNN
+F 1 "GND" H 3200 8050 50  0000 C CNN
+F 2 "" H 3200 8200 60  0000 C CNN
+F 3 "" H 3200 8200 60  0000 C CNN
+	1    3200 8200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 8200 3200 8100
+Connection ~ 3200 7600
+Connection ~ 2200 7600
+Wire Wire Line
+	2200 8200 2200 8100
+$Comp
+L Battery BT?
+U 1 1 56577CA5
+P 1600 7750
+F 0 "BT?" H 1700 7800 50  0000 L CNN
+F 1 "Battery" H 1700 7700 50  0000 L CNN
+F 2 "" V 1600 7790 60  0000 C CNN
+F 3 "" V 1600 7790 60  0000 C CNN
+	1    1600 7750
+	1    0    0    -1  
+$EndComp
+$Comp
+L +BATT #PWR?
+U 1 1 56577E84
+P 1600 7400
+F 0 "#PWR?" H 1600 7350 20  0001 C CNN
+F 1 "+BATT" H 1600 7500 30  0000 C CNN
+F 2 "" H 1600 7400 60  0000 C CNN
+F 3 "" H 1600 7400 60  0000 C CNN
+	1    1600 7400
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 56577F22
+P 1600 8200
+F 0 "#PWR?" H 1600 7950 50  0001 C CNN
+F 1 "GND" H 1600 8050 50  0000 C CNN
+F 2 "" H 1600 8200 60  0000 C CNN
+F 3 "" H 1600 8200 60  0000 C CNN
+	1    1600 8200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1600 8200 1600 7900
+Wire Wire Line
+	1600 7600 1600 7400
+$EndSCHEMATC

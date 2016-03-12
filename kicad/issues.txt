@@ -1,0 +1,13 @@
+22DEC2015
+
+The PIC (U6) VCAP pin, #56, should not be grounded.  It should connect through a cap to ground, such as C16, although an extra cap should be added instead of repurposing C16 from bypassing VDD on pin 57.
+
+The UART connection to wireless module U9 should be flipped for TX->RX and RX->TX and similar for RTS and CTS.
+
+Move SMPS control pin away from RB3 onto a 5V tolerant pin, or make it open drain more.  Some extra special rules about trying to use open drain I don't want to bother with.
+
+SPV1 and CKV1 and SPV2 and CKV2 are not connected correctly.  Needs to have SPV separate from the CKV, joined together the other way.  SPV is start pulse vertical which is only pulled low once at the frame start.  CKV is some kind of clock control.  Those two pair work with gmode to make the gate driver.
+
+So might as well check out the SD card and memory chip too while we're here.
+
+Any more?

@@ -1,0 +1,35 @@
+build/default/production/_ext/1361460060/drv_adc_static.o:  \
+ ../src/system_config/default/framework/driver/adc/src/drv_adc_static.c  \
+ ../src/system_config/default/framework/driver/adc/drv_adc_static.h  \
+ ../src/system_config/default/system_config.h  \
+ ../../../../v1_05/framework/peripheral/adc/plib_adc.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/adc_processor.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/adc_p32xxxx.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/adc_p32mx330f064h.h  \
+ ../../../../v1_05/framework/peripheral/peripheral_common_32bit.h  \
+ ../../../../v1_05/framework/peripheral/peripheral_common.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_EnableControl_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_StopInIdle_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_CalibrationControl_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_MuxInputScanSelect_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_MuxInputScanSelectExtended_Unsupported.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_VoltageReference_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_MuxChannel0PositiveInput_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_MuxChannel0NegativeInput_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_MuxInputScanControl_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_SamplingModeControl_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_SamplesPerInterruptSelect_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_SamplingAutoStart_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_SamplingControl_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_SamplingAcquisitionTime_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_SamplingStatus_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_ConversionControl_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_ConversionClock_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_ConversionClockSource_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_ConversionTriggerSource_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_ConversionStopSequenceControl_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_ConversionStatus_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_ResultFormat_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_ResultBufferMode_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_ResultBufferFillStatus_Default.h  \
+ ../../../../v1_05/framework/peripheral/adc/processor/../templates/adc_ResultGetByIndex_Default.h 
